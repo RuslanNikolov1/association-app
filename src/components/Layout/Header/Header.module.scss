@@ -1,0 +1,222 @@
+@import '../../../styles/variables.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-blue);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--primary-blue-dark);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+  transition: all var(--transition-fast);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) 0;
+  min-height: 80px;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+  transition: opacity var(--transition-fast);
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.streetLight {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  transition: transform var(--transition-fast);
+}
+
+.logo:hover .streetLight {
+  transform: scale(1.1);
+}
+
+.logoMain {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+.nav {
+  position: relative;
+  flex-shrink: 0;
+  margin-left: var(--spacing-2xl);
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger {
+  width: 24px;
+  height: 2px;
+  background-color: var(--white);
+  margin: 2px 0;
+  transition: all var(--transition-fast);
+  transform-origin: center;
+}
+
+.menuToggle[aria-expanded="true"] .hamburger:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menuToggle[aria-expanded="true"] .hamburger:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle[aria-expanded="true"] .hamburger:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.navList {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navItem {
+  margin: 0;
+}
+
+.navLink {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.01em;
+}
+
+.navLink:hover {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.navLinkActive {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navLinkActive::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color: var(--white);
+  border-radius: 1px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .headerContent {
+    min-height: 70px;
+  }
+
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .navList {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-md);
+    flex-direction: column;
+    gap: 0;
+    padding: var(--spacing-lg) 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+  }
+
+  .navListOpen {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navItem {
+    width: 100%;
+  }
+
+  .navLink {
+    padding: var(--spacing-md) var(--spacing-lg);
+    text-align: center;
+    border-radius: 0;
+    width: 100%;
+    color: var(--text-primary);
+    font-size: var(--text-lg);
+    background-color: transparent;
+  }
+
+  .navLinkActive::after {
+    display: none;
+  }
+
+  .navLink:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: var(--text-primary);
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .streetLight {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logoMain {
+    font-size: var(--text-xl);
+  }
+}

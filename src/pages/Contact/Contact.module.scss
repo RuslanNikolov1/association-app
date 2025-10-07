@@ -1,0 +1,230 @@
+@import '../../styles/variables.scss';
+
+.contact {
+  min-height: 100vh;
+}
+
+.pageHeader {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+  color: var(--white);
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  color: var(--white);
+}
+
+.pageSubtitle {
+  font-size: var(--text-xl);
+  line-height: var(--leading-relaxed);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contactInfo {
+  padding-right: var(--spacing-xl);
+}
+
+.sectionTitle {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+}
+
+.contactDescription {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-2xl);
+  font-weight: 500;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+}
+
+.contactIcon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-blue-light) 0%, var(--primary-blue) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+}
+
+.contactText h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.contactText p {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+  line-height: var(--leading-normal);
+  font-weight: 500;
+}
+
+.contactLink {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contactLink:hover {
+  color: var(--primary-blue-dark);
+  text-decoration: underline;
+}
+
+.contactNote {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.socialLinks {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+}
+
+.socialLink {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.socialLink:hover {
+  color: var(--primary-blue-dark);
+  text-decoration: underline;
+}
+
+.contactForm {
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-lg);
+}
+
+.mapSection {
+  background-color: var(--white);
+}
+
+.mapContainer {
+  margin-top: var(--spacing-xl);
+}
+
+.mapResponsive { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+.mapResponsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius-lg); }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: var(--text-3xl);
+  }
+
+  .pageSubtitle {
+    font-size: var(--text-lg);
+  }
+
+  .contact .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactInfo {
+    padding-right: 0;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .contactForm {
+    padding: var(--spacing-lg);
+  }
+
+  .contactItem {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-md);
+  }
+
+  .contactIcon {
+    align-self: center;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+  .formActions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageHeader {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .pageTitle {
+    font-size: var(--text-2xl);
+  }
+
+  .pageSubtitle {
+    font-size: var(--text-base);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-xl);
+  }
+
+  .contactDescription {
+    font-size: var(--text-base);
+  }
+
+  .contactForm {
+    padding: var(--spacing-md);
+  }
+
+  .contactIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .mapPlaceholder {
+    height: 300px;
+    font-size: var(--text-base);
+  }
+}
