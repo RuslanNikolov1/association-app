@@ -1,5 +1,3 @@
-@import '../../styles/variables.scss';
-
 .home {
   min-height: 100vh;
 }
@@ -43,8 +41,37 @@
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2xl);
+}
+
+.flagLeft,
+.flagRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.flag {
+  width: 120px;
+  height: 80px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.flag:hover {
+  opacity: 1;
+}
+
+.heroText {
+  flex: 1;
+  max-width: 800px;
 }
 
 .heroTitle {
@@ -90,6 +117,52 @@
   background-color: var(--white);
   color: var(--primary-blue);
   border-color: var(--white);
+}
+
+/* Mobile styles for hero section */
+@media (max-width: 768px) {
+  .heroContent {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    max-width: 100%;
+  }
+  
+  .flagLeft,
+  .flagRight {
+    display: none;
+  }
+  
+  .heroText {
+    max-width: 100%;
+  }
+  
+  .heroTitle {
+    font-size: var(--text-4xl);
+  }
+  
+  .heroSubtitle {
+    font-size: var(--text-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: var(--text-3xl);
+  }
+  
+  .heroSubtitle {
+    font-size: var(--text-base);
+  }
+  
+  .heroActions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .heroActions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 
 .mission {
@@ -221,7 +294,8 @@
   font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--spacing-2xl);
-  opacity: 0.9;
+  color: var(--white);
+  opacity: 0.95;
 }
 
 .ctaActions {
@@ -507,6 +581,15 @@
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
 }
 
+.activityText {
+  font-family: var(--font-primary);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+}
+
 /* New card layout with bigger graphs */
 .activityCard {
   padding: var(--spacing-lg);
@@ -556,7 +639,7 @@
 
 .chartTitle {
   font-family: var(--font-display);
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
   font-weight: 600;
   color: var(--primary-blue);
   margin-bottom: var(--spacing-md);
@@ -580,7 +663,7 @@
 
 .barLabel {
   font-family: var(--font-primary);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: 500;
   color: var(--text-primary);
   min-width: 80px;
@@ -632,8 +715,8 @@
 }
 
 .emissionIcon {
-  font-size: var(--text-lg);
-  width: 30px;
+  font-size: var(--text-2xl);
+  width: 40px;
   text-align: center;
 }
 
@@ -643,14 +726,14 @@
 
 .emissionLabel {
   font-family: var(--font-primary);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   margin-bottom: 2px;
 }
 
 .emissionValue {
   font-family: var(--font-display);
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
   font-weight: 700;
   color: var(--accent-green);
 }
@@ -677,7 +760,7 @@
 
 .metricValue {
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: 700;
   color: var(--primary-blue);
   margin-bottom: 4px;
@@ -685,7 +768,7 @@
 
 .metricLabel {
   font-family: var(--font-primary);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.2;
 }
@@ -753,13 +836,13 @@
 }
 
 .techIcon {
-  font-size: var(--text-lg);
+  font-size: var(--text-2xl);
   margin-bottom: var(--spacing-xs);
 }
 
 .techLabel {
   font-family: var(--font-primary);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: 500;
   color: var(--text-primary);
   margin-bottom: var(--spacing-xs);
@@ -803,13 +886,13 @@
 }
 
 .stepIcon {
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
   margin-bottom: var(--spacing-xs);
 }
 
 .stepLabel {
   font-family: var(--font-primary);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--text-secondary);
   margin-bottom: 4px;
   line-height: 1.2;
@@ -817,7 +900,7 @@
 
 .stepValue {
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: 700;
   color: var(--primary-blue);
 }
@@ -842,7 +925,7 @@
 
 .statValue {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
   font-weight: 700;
   color: var(--primary-blue);
   margin-bottom: 4px;
@@ -850,7 +933,7 @@
 
 .statLabel {
   font-family: var(--font-primary);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--text-secondary);
 }
 
@@ -1023,6 +1106,11 @@
   .heroTitle {
     font-size: var(--text-4xl);
   }
+  .reveal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   .heroSubtitle {
     font-size: var(--text-base);
@@ -1079,10 +1167,20 @@
     min-height: auto;
   }
 
+  .textContent {
+  align-items: center;
+  }
+
+  .chartSection {
+    width: 100%;
+    flex: none;
+  }
+
   .chartContainer {
     margin-top: 0;
     padding: var(--spacing-md);
     max-width: 100%;
+    width: 100%;
   }
 
   .activityCard {
@@ -1117,6 +1215,10 @@
   .aboutSection .subsection,
   .activitiesSection .activityItem {
     margin-bottom: var(--spacing-md);
+  }
+
+  .activityText {
+    text-align: center;
   }
 
   .teamMember {

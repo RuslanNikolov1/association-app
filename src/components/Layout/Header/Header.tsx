@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styles from './Header.module.scss'
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
+  const navRef = useRef<HTMLElement>(null)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -15,6 +16,25 @@ const Header: React.FC = () => {
   }
 
   const isActive = (path: string) => location.pathname === path
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        closeMenu()
+      }
+    }
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('touchstart', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [isMenuOpen])
 
   return (
     <header className={styles.header} role="banner">
@@ -29,7 +49,7 @@ const Header: React.FC = () => {
             <span className={styles.logoMain}>АМТП</span>
           </Link>
 
-          <nav className={styles.nav} role="navigation" aria-label="Main navigation">
+          <nav ref={navRef} className={styles.nav} role="navigation" aria-label="Main navigation">
             <button
               className={styles.menuToggle}
               onClick={toggleMenu}
