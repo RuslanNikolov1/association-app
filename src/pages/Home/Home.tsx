@@ -540,7 +540,7 @@ const Home: React.FC = () => {
             <div className="reveal">
               <div className={styles.mapPlaceholder}>
                 <img 
-                  src="/src/assets/contact-map.svg" 
+                  src="/contact-map.svg" 
                   alt="Местоположение на АМТП на карта"
                   className={styles.mapImage}
                 />

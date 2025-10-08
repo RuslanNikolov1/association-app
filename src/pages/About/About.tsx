@@ -131,7 +131,7 @@ const About: React.FC = () => {
             </div>
             <div className={styles.teamImage}>
               <img 
-                src="/src/assets/team-illustration.svg" 
+                src="/team-illustration.svg" 
                 alt="Експертен екип на АМТП - професионалисти в офис среща"
                 className={styles.teamImage}
               />

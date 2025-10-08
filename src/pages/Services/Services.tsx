@@ -100,7 +100,7 @@ const Services: React.FC = () => {
       <section className={`section ${styles.illustration}`}>
         <div className="container">
           <img 
-            src="/src/assets/services-illustration.svg" 
+            src="/services-illustration.svg" 
             alt="Илюстрация на транспортни услуги и мрежа"
             className={styles.servicesIllustration}
           />
