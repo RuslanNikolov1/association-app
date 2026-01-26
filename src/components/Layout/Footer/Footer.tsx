@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react'
 import styles from './Footer.module.scss'
 
 const Footer: React.FC = () => {
@@ -19,7 +20,6 @@ const Footer: React.FC = () => {
             <nav className={styles.footerNav} aria-label="Footer navigation">
               <ul className={styles.footerNavList}>
                 <li><Link to="/" className={styles.footerLink}>Начало</Link></li>
-                <li><Link to="/about" className={styles.footerLink}>За нас</Link></li>
                 <li><Link to="/services" className={styles.footerLink}>Услуги</Link></li>
                 <li><Link to="/contact" className={styles.footerLink}>Контакти</Link></li>
               </ul>
@@ -32,18 +32,23 @@ const Footer: React.FC = () => {
               <p className={styles.contactItem}>
                 <span className="sr-only">Email:</span>
                 <a href="mailto:info@amtp.bg" className={styles.contactLink}>
+                  <Mail className={styles.iconInline} aria-hidden="true" focusable="false" />
                   info@amtp.bg
                 </a>
               </p>
               <p className={styles.contactItem}>
                 <span className="sr-only">Телефон:</span>
                 <a href="tel:+359123456789" className={styles.contactLink}>
+                  <Phone className={styles.iconInline} aria-hidden="true" focusable="false" />
                   +359 123 456 789
                 </a>
               </p>
               <p className={styles.contactItem}>
                 <span className="sr-only">Адрес:</span>
-                <span>София, България</span>
+                <span className={styles.contactText}>
+                  <MapPin className={styles.iconInline} aria-hidden="true" focusable="false" />
+                  София, България
+                </span>
               </p>
             </div>
           </div>
@@ -56,6 +61,7 @@ const Footer: React.FC = () => {
                 className={styles.socialLink}
                 aria-label="LinkedIn профил"
               >
+                <Linkedin className={styles.iconInline} aria-hidden="true" focusable="false" />
                 LinkedIn
               </a>
               <a 
@@ -63,6 +69,7 @@ const Footer: React.FC = () => {
                 className={styles.socialLink}
                 aria-label="Twitter профил"
               >
+                <Twitter className={styles.iconInline} aria-hidden="true" focusable="false" />
                 Twitter
               </a>
             </div>

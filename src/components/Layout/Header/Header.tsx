@@ -77,15 +77,6 @@ const Header: React.FC = () => {
               </li>
               <li className={styles.navItem}>
                 <Link
-                  to="/about"
-                  className={`${styles.navLink} ${isActive('/about') ? styles.navLinkActive : ''}`}
-                  onClick={closeMenu}
-                >
-                  За нас
-                </Link>
-              </li>
-              <li className={styles.navItem}>
-                <Link
                   to="/activities"
                   className={`${styles.navLink} ${isActive('/activities') ? styles.navLinkActive : ''}`}
                   onClick={closeMenu}
