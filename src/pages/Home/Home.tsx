@@ -1,36 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {
-  Accessibility,
-  ArrowDownCircle,
-  ArrowRight,
-  Check,
-  Clock,
-  Cpu,
-  Gauge,
-  Globe,
-  Landmark,
-  Leaf,
-  Mail,
-  Map,
-  MapPin,
-  Navigation,
-  Network,
-  Phone,
-  Route,
-  Send,
-  Shield,
-  TrafficCone,
-  Users,
-  Wind,
-} from 'lucide-react'
+import { ArrowRight, Check, Clock, Cpu, Gauge, Globe, Landmark, Leaf, Mail, Map, MapPin, Navigation, Phone, Route, Send, TrafficCone, Users, Wind } from 'lucide-react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
-import EUFlag from '../../components/Flags/EUFlag'
-import BulgarianFlag from '../../components/Flags/BulgarianFlag'
-import NetworkNodesDiagram from '../../components/Diagrams/NetworkNodesDiagram'
-import TrafficFlowDiagram from '../../components/Diagrams/TrafficFlowDiagram'
-import IntersectionSchematic from '../../components/Diagrams/IntersectionSchematic'
-import ProcessFlowDiagram from '../../components/Diagrams/ProcessFlowDiagram'
 import styles from './Home.module.scss'
 
 const Home: React.FC = () => {
@@ -42,12 +13,9 @@ const Home: React.FC = () => {
   return (
     <div className={styles.home}>
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section id="top" className={styles.hero}>
         <div className="container">
           <div className={styles.heroContent}>
-            <div className={styles.flagLeft}>
-              <EUFlag className={styles.flag} />
-            </div>
             <div className={styles.heroText}>
               <h1 className={styles.heroTitle}>
                 Асоциация за мобилност и транспортни политики
@@ -55,19 +23,6 @@ const Home: React.FC = () => {
               <p className={styles.heroSubtitle}>
                 Юридическо лице с нестопанска цел за осъществяване на дейност в обществена полза.
               </p>
-              <div className={styles.heroActions}>
-                <a href="#about-us" className="btn btn-primary btn-lg">
-                  <ArrowDownCircle className={styles.iconInline} aria-hidden="true" focusable="false" />
-                  Научете повече
-                </a>
-                <Link to="/contact" className="btn btn-secondary btn-lg">
-                  <Mail className={styles.iconInline} aria-hidden="true" focusable="false" />
-                  Свържете се с нас
-                </Link>
-              </div>
-            </div>
-            <div className={styles.flagRight}>
-              <BulgarianFlag className={styles.flag} />
             </div>
           </div>
         </div>
@@ -78,63 +33,40 @@ const Home: React.FC = () => {
         <div className={styles.aboutSectionBackground}></div>
         <div className="container">
           <div className={styles.aboutLayout}>
-            {/* Left Column - Text (60%) */}
-            <div className={styles.aboutTextColumn}>
-              <div className={styles.aboutOverline}>ЗА АСОЦИАЦИЯТА</div>
-              
-              <p className={styles.aboutLeadStatement}>
-                Асоциацията работи в сферата на транспорта, мобилността и транспортната инфраструктура, като основната ѝ мисия е да подпомага устойчивото развитие на населените места чрез по-добра свързаност, достъпност, безопасност и ефективност на транспортните системи.
-              </p>
-              
-              <div className={styles.aboutDivider}></div>
-              
-              <p className={styles.aboutBodyText}>
-                АМТП разработва, изпълнява и подпомага изпълнението на:
-              </p>
-              
-              <ul className={styles.aboutCustomList}>
-                <li>Стратегии</li>
-                <li>Програми</li>
-                <li>Планове</li>
-                <li>Проекти и аналитични документи</li>
-              </ul>
-              
-              <p className={styles.aboutClosingLine}>
-                от местно, регионално и национално значение, свързани с транспорт и мобилност.
-              </p>
-            </div>
-            
-            {/* Right Column - Institutional Visual Element (40%) */}
-            <div className={styles.aboutVisualColumn}>
-              <div className={styles.aboutImageWrapper}>
-                <img 
-                  src="/tram.jpg" 
-                  alt="Трамвайна инфраструктура - пример за модерна транспортна система"
-                  className={styles.aboutImage}
-                />
+            <div className={styles.aboutContainerCard}>
+              <div className={styles.aboutHeaderRow}>
+                <div className={styles.aboutOverline}>ЗА АСОЦИАЦИЯТА</div>
+                <div className={styles.aboutDivider}></div>
+
+                <p className={styles.aboutLeadStatementFullWidth}>
+                  Асоциацията работи в сферата на транспорта, мобилността и транспортната инфраструктура, като основната ѝ мисия е да подпомага устойчивото развитие на населените места чрез по-добра свързаност, достъпност, безопасност и ефективност на транспортните системи.
+                </p>
               </div>
-              <div className={styles.aboutInstitutionalCard}>
-                <div className={styles.aboutCardHeader}>
-                  <Landmark className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                  <h3 className={styles.aboutCardTitle}>Мисия</h3>
-                </div>
-                <div className={styles.aboutCardContent}>
-                  <div className={styles.aboutCardPrinciple}>
-                    <Network className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                    <span>Свързаност</span>
-                  </div>
-                  <div className={styles.aboutCardPrinciple}>
-                    <Accessibility className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                    <span>Достъпност</span>
-                  </div>
-                  <div className={styles.aboutCardPrinciple}>
-                    <Shield className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                    <span>Безопасност</span>
-                  </div>
-                  <div className={styles.aboutCardPrinciple}>
-                    <Gauge className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                    <span>Ефективност</span>
-                  </div>
+
+              <div className={styles.aboutContentColumn}>
+                <p className={styles.aboutBodyText}>
+                  АМТП разработва, изпълнява и подпомага изпълнението на:
+                </p>
+
+                <ul className={styles.aboutCustomList}>
+                  <li>Стратегии</li>
+                  <li>Програми</li>
+                  <li>Планове</li>
+                  <li>Проекти и аналитични документи</li>
+                </ul>
+
+                <p className={styles.aboutClosingLine}>
+                  от местно, регионално и национално значение, свързани с транспорт и мобилност.
+                </p>
+              </div>
+
+              <div className={styles.aboutVisualColumn}>
+                <div className={styles.aboutImageWrapper}>
+                  <img
+                    src="/AboutPicture.png"
+                    alt="Трамвайна инфраструктура - пример за модерна транспортна система"
+                    className={styles.aboutImage}
+                  />
                 </div>
               </div>
             </div>
@@ -143,7 +75,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Activities Section */}
-      <section className={`section ${styles.activitiesSection}`} aria-labelledby="activities-heading">
+      <section id="activities" className={`section ${styles.activitiesSection}`} aria-labelledby="activities-heading">
         <div className={styles.activitiesSectionBackground}></div>
         <div className="container">
           <div className={styles.activitiesHeader}>
@@ -263,7 +195,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className={styles.supportCardImageWrapper}>
                   <img 
-                    src="/services-illustration.svg" 
+                    src="/Planning.png" 
                     alt="Илюстрация на транспортни услуги и мрежа"
                     className={styles.supportCardImage}
                   />
@@ -282,7 +214,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Team Section */}
-      <section className={`section ${styles.teamSection}`}>
+      <section id="team" className={`section ${styles.teamSection}`}>
         <div className={styles.teamSectionBackground}></div>
         <div className="container">
           <div className={styles.teamHeader}>
@@ -291,50 +223,56 @@ const Home: React.FC = () => {
           </div>
           
           <div className={styles.teamLayout}>
-            <div className={styles.teamImageWrapper}>
-              <img 
-                src="/team-illustration.svg" 
-                alt="Експертен екип на АМТП"
-                className={styles.teamImage}
-              />
-            </div>
             <div className={styles.teamContentCard}>
               <div className={styles.teamContentHeader}>
                 <Users className={styles.iconBadge} aria-hidden="true" focusable="false" />
                 <h3 className={styles.teamContentTitle}>Експертна структура</h3>
               </div>
-              <p className={styles.teamContentText}>
-                Екипът на АМТП включва експерти с дългогодишен практически опит в:
-              </p>
-              <ul className={styles.teamExpertiseList}>
-                <li>
-                  <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                  <span>управление на мобилността;</span>
-                </li>
-                <li>
-                  <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                  <span>обществен транспорт и паркиране;</span>
-                </li>
-                <li>
-                  <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                  <span>работа с местната власт;</span>
-                </li>
-                <li>
-                  <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                  <span>разработване на нормативни и стратегически документи;</span>
-                </li>
-                <li>
-                  <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                  <span>управление и изпълнение на проекти.</span>
-                </li>
-              </ul>
+
+              <div className={styles.teamCardLayout}>
+                <div className={styles.teamImageWrapper}>
+                  <img
+                    src="/People.png"
+                    alt="Експертен екип на АМТП"
+                    className={styles.teamImage}
+                  />
+                </div>
+
+                <div className={styles.teamCardTextColumn}>
+                  <p className={styles.teamContentText}>
+                    Екипът на АМТП включва експерти с дългогодишен практически опит в:
+                  </p>
+                  <ul className={styles.teamExpertiseList}>
+                    <li>
+                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                      <span>управление на мобилността;</span>
+                    </li>
+                    <li>
+                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                      <span>обществен транспорт и паркиране;</span>
+                    </li>
+                    <li>
+                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                      <span>работа с местната власт;</span>
+                    </li>
+                    <li>
+                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                      <span>разработване на нормативни и стратегически документи;</span>
+                    </li>
+                    <li>
+                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                      <span>управление и изпълнение на проекти.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Main Project Types Section */}
-      <section className={`section ${styles.projectTypesSection}`}>
+      <section id="project-types" className={`section ${styles.projectTypesSection}`}>
         <div className={styles.projectTypesSectionBackground}></div>
         <div className="container">
           <div className={styles.projectTypesHeader}>
@@ -350,30 +288,30 @@ const Home: React.FC = () => {
               <div className={styles.projectTypeCardLine}></div>
             </div>
             <div className={styles.projectTypeCardBody}>
-              <div className={styles.projectTypeCardLayout}>
-                <div className={styles.projectTypeCardTextContent}>
-                  <h3 className={styles.projectTypeCardTitle}>Финансови и социални анализи на транспортни и паркинг политики</h3>
-                  <p className={styles.projectTypeCardText}>АМТП извършва задълбочени финансови, икономически и социални анализи, свързани с:</p>
-              <ul className={styles.projectTypeList}>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>транспортни схеми;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>тарифни политики в обществения транспорт;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>въвеждане или промяна на зони за платено паркиране;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>ефекти от различни модели на организация на движението.</span></li>
-              </ul>
-                  <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>Тези анализи имат за цел:</p>
-                  <ul className={styles.projectTypeList}>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>да оценят реалните ползи и разходи от прилагането на конкретни политики;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>да подпомогнат вземането на информирани управленски решения;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>да осигурят аргументация пред общински съвети, администрации и граждани.</span></li>
+              <div className={styles.projectTypeCardTextContent}>
+                <h3 className={styles.projectTypeCardTitle}>Финансови и социални анализи на транспортни и паркинг политики</h3>
+                <p className={styles.projectTypeCardText}>АМТП извършва задълбочени финансови, икономически и социални анализи, свързани с:</p>
+                <div className={styles.projectTypePrimaryRow}>
+                  <ul className={styles.projectTypeListPrimary}>
+                    <li><Route className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>Транспортни схеми;</span></li>
+                    <li><Landmark className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>Тарифни политики в обществения транспорт;</span></li>
+                    <li><MapPin className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>Въвеждане или промяна на зони за платено паркиране;</span></li>
+                    <li><TrafficCone className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>Ефекти от различни модели на организация на движението.</span></li>
                   </ul>
+                  <div className={styles.projectTypePrimaryImageWrapper}>
+                    <img
+                      src="/Analysis.jpg"
+                      alt="Визуализация на анализ на транспортни политики"
+                      className={styles.projectTypePrimaryImage}
+                    />
+                  </div>
                 </div>
-                <div className={styles.projectTypeCardImageWrapper}>
-                  <img 
-                    src="/istockphoto-501619427-612x612-removebg-preview.png" 
-                    alt="Анализ и планиране на транспортни политики"
-                    className={styles.projectTypeCardImage}
-                  />
-                </div>
+                <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>Тези анализи имат за цел:</p>
+                <ul className={styles.projectTypeList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>да оценят реалните ползи и разходи от прилагането на конкретни политики;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>да подпомогнат вземането на информирани управленски решения;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>да осигурят аргументация пред общински съвети, администрации и граждани.</span></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -386,28 +324,19 @@ const Home: React.FC = () => {
               <div className={styles.projectTypeCardLine}></div>
             </div>
             <div className={styles.projectTypeCardBody}>
-              <div className={styles.projectTypeCardLayoutReversed}>
-                <div className={styles.projectTypeCardImageWrapper}>
-                  <img 
-                    src="/transport-hero.svg" 
-                    alt="Проектни предложения и финансиране"
-                    className={styles.projectTypeCardImage}
-                  />
-                </div>
                 <div className={styles.projectTypeCardTextContent}>
                   <h3 className={styles.projectTypeCardTitle}>Подготовка на проектни предложения за европейско и национално финансиране</h3>
                   <p className={styles.projectTypeCardText}>Асоциацията подпомага общини и държавни структури при:</p>
               <ul className={styles.projectTypeList}>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>разработване на проектни предложения;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>попълване на апликационни форми;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>структуриране на проектната логика и дейности;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>изготвяне на анализ „разходи–ползи" (АРП);</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пазарни проучвания и обосновки;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>съответствие с изискванията на конкретните финансиращи програми.</span></li>
+                <li><Send className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>разработване на проектни предложения;</span></li>
+                <li><Mail className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>попълване на апликационни форми;</span></li>
+                <li><Route className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>структуриране на проектната логика и дейности;</span></li>
+                <li><Gauge className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>изготвяне на анализ „разходи–ползи\" (АРП);</span></li>
+                <li><Globe className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пазарни проучвания и обосновки;</span></li>
+                <li><Landmark className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>съответствие с изискванията на конкретните финансиращи програми.</span></li>
               </ul>
                   <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>Работата обхваща както европейски програми, така и национални източници на финансиране.</p>
                 </div>
-              </div>
             </div>
           </div>
 
@@ -444,22 +373,18 @@ const Home: React.FC = () => {
                     </div>
                   </dl>
 
-                  <NetworkNodesDiagram className={styles.gpodDiagramFull} variant="full" />
-
                   <div className={styles.gpodCallouts} role="list" aria-label="Ключови акценти">
                     <aside className={styles.gpodCallout} role="listitem">
                       <h5 className={styles.gpodCalloutTitle}>Дефиниции и термини</h5>
                       <p className={styles.gpodCalloutText}>
                         <span className={styles.gpodTerm}>ГПОД</span> работи като “рамка”, върху която стъпват последващите схеми, проекти и решения на общината.
                       </p>
-                      <TrafficFlowDiagram className={styles.gpodDiagramInline} variant="inline" />
                     </aside>
                     <aside className={styles.gpodCallout} role="listitem">
                       <h5 className={styles.gpodCalloutTitle}>Нормативна проследимост</h5>
                       <p className={styles.gpodCalloutText}>
                         Всяка препоръка се обвързва с конкретни цели, критерии и изпълнимост — така документът е защитим пред институции и общественост.
                       </p>
-                      <IntersectionSchematic className={styles.gpodDiagramInline} variant="inline" />
                     </aside>
                   </div>
                 </div>
@@ -496,12 +421,10 @@ const Home: React.FC = () => {
                     </div>
                   </li>
                 </ol>
-                <ProcessFlowDiagram className={styles.gpodDiagramFull} variant="full" />
               </div>
 
               <div className={styles.projectTypeSubsection}>
                 <h4 className={styles.projectTypeSubtitle}>Защо се изработва ГПОД?</h4>
-                <div className={styles.gpodTwoColumn}>
                   <div>
                     <p className={styles.projectTypeCardText}>ГПОД се разработва с цел:</p>
                     <ul className={styles.projectTypeList}>
@@ -510,19 +433,16 @@ const Home: React.FC = () => {
                       <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизиране на трафика и намаляване на конфликтните точки;</span></li>
                       <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>създаване на предвидима и разбираема транспортна среда.</span></li>
                     </ul>
-                    <TrafficFlowDiagram className={styles.gpodDiagramFull} variant="full" />
                   </div>
-                  <aside className={styles.gpodCalloutEmphasis} aria-label="Връзка с пътната безопасност">
-                    <h5 className={styles.gpodCalloutTitle}>Връзка с пътната безопасност</h5>
-                    <ul className={styles.projectTypeList}>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>идентифицира рискови участъци и зони с концентрация на ПТП;</span></li>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>предлага мерки за ограничаване на скоростта и конфликтите;</span></li>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>въвежда адекватна сигнализация, маркировка и режими на движение;</span></li>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>осигурява по-добра защита на уязвимите участници в движението.</span></li>
-                    </ul>
-                    <IntersectionSchematic className={styles.gpodDiagramFull} variant="full" />
-                  </aside>
-                </div>
+                <aside className={styles.gpodCalloutEmphasis} aria-label="Връзка с пътната безопасност">
+                  <h5 className={styles.gpodCalloutTitle}>Връзка с пътната безопасност</h5>
+                  <ul className={styles.projectTypeList}>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>идентифицира рискови участъци и зони с концентрация на ПТП;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>предлага мерки за ограничаване на скоростта и конфликтите;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>въвежда адекватна сигнализация, маркировка и режими на движение;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>осигурява по-добра защита на уязвимите участници в движението.</span></li>
+                  </ul>
+                </aside>
               </div>
 
               <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>
@@ -537,7 +457,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Completed and Current Projects Section */}
-      <section className={`section ${styles.completedProjectsSection}`}>
+      <section id="experience" className={`section ${styles.completedProjectsSection}`}>
         <div className={styles.completedProjectsSectionBackground}></div>
         <div className="container">
           <div className={styles.completedProjectsHeader}>
@@ -546,29 +466,6 @@ const Home: React.FC = () => {
           </div>
           
           <div className={styles.completedProjectsLayout}>
-            <div className={styles.completedProjectsImageGrid}>
-              <div className={styles.completedProjectsImageItem}>
-                <img 
-                  src="/bus.jpg" 
-                  alt="Градски автобус - пример за обществен транспорт"
-                  className={styles.completedProjectsImage}
-                />
-              </div>
-              <div className={styles.completedProjectsImageItem}>
-                <img 
-                  src="/trolley.jpg" 
-                  alt="Тролейбус - екологичен градски транспорт"
-                  className={styles.completedProjectsImage}
-                />
-              </div>
-              <div className={styles.completedProjectsImageItem}>
-                <img 
-                  src="/Chariot-Motors-e-buses_new-1.png" 
-                  alt="Електрически автобуси - бъдещето на градския транспорт"
-                  className={styles.completedProjectsImage}
-                />
-              </div>
-            </div>
             <div className={styles.completedProjectsCard}>
               <div className={styles.completedProjectsCardHeader}>
                 <MapPin className={styles.iconBadge} aria-hidden="true" focusable="false" />
@@ -600,7 +497,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Contact Section */}
-      <section className={`section ${styles.contactSection}`}>
+      <section id="contact" className={`section ${styles.contactSection}`}>
         <div className="container">
           <h2 className={`text-center ${styles.sectionTitle}`}>
             <Phone className={styles.iconTitle} aria-hidden="true" focusable="false" />
@@ -628,35 +525,12 @@ const Home: React.FC = () => {
             </div>
             <div className="reveal">
               <div className={styles.mapPlaceholder}>
-                <img 
-                  src="/contact-map.svg" 
-                  alt="Местоположение на АМТП на карта"
-                  className={styles.mapImage}
-                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className={`section ${styles.cta}`}>
-        <div className="container">
-          <div className={styles.ctaContent}>
-            <h2 className={styles.ctaTitle}>Готови ли сте да работим заедно?</h2>
-            <p className={styles.ctaText}>
-              Свържете се с нас за консултация или сътрудничество в областта на 
-              транспортната мобилност и политики.
-            </p>
-            <div className={styles.ctaActions}>
-              <Link to="/contact" className="btn btn-primary btn-lg">
-                Свържете се с нас
-                <ArrowRight className={styles.iconInline} aria-hidden="true" focusable="false" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

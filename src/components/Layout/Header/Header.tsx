@@ -67,76 +67,58 @@ const Header: React.FC = () => {
               className={`${styles.navList} ${isMenuOpen ? styles.navListOpen : ''}`}
             >
               <li className={styles.navItem}>
-                <Link
-                  to="/"
-                  className={`${styles.navLink} ${isActive('/') ? styles.navLinkActive : ''}`}
+                <a
+                  href="#about-us"
+                  className={styles.navLink}
                   onClick={closeMenu}
                 >
-                  Начало
-                </Link>
+                  За асоциацията
+                </a>
               </li>
               <li className={styles.navItem}>
-                <Link
-                  to="/activities"
-                  className={`${styles.navLink} ${isActive('/activities') ? styles.navLinkActive : ''}`}
+                <a
+                  href="#activities"
+                  className={styles.navLink}
                   onClick={closeMenu}
                 >
                   Дейности
-                </Link>
+                </a>
               </li>
               <li className={styles.navItem}>
-                <Link
-                  to="/projects"
-                  className={`${styles.navLink} ${isActive('/projects') ? styles.navLinkActive : ''}`}
+                <a
+                  href="#team"
+                  className={styles.navLink}
                   onClick={closeMenu}
                 >
-                  Проекти
-                </Link>
+                  Екип
+                </a>
               </li>
               <li className={styles.navItem}>
-                <Link
-                  to="/news"
-                  className={`${styles.navLink} ${isActive('/news') ? styles.navLinkActive : ''}`}
+                <a
+                  href="#project-types"
+                  className={styles.navLink}
                   onClick={closeMenu}
                 >
-                  Новини
-                </Link>
+                  Проектни типове
+                </a>
               </li>
               <li className={styles.navItem}>
-                <Link
-                  to="/partners"
-                  className={`${styles.navLink} ${isActive('/partners') ? styles.navLinkActive : ''}`}
+                <a
+                  href="#experience"
+                  className={styles.navLink}
                   onClick={closeMenu}
                 >
-                  Партньори
-                </Link>
+                  Проектен опит
+                </a>
               </li>
               <li className={styles.navItem}>
-                <Link
-                  to="/resources"
-                  className={`${styles.navLink} ${isActive('/resources') ? styles.navLinkActive : ''}`}
-                  onClick={closeMenu}
-                >
-                  Ресурси
-                </Link>
-              </li>
-              <li className={styles.navItem}>
-                <Link
-                  to="/services"
-                  className={`${styles.navLink} ${isActive('/services') ? styles.navLinkActive : ''}`}
-                  onClick={closeMenu}
-                >
-                  Услуги
-                </Link>
-              </li>
-              <li className={styles.navItem}>
-                <Link
-                  to="/contact"
-                  className={`${styles.navLink} ${isActive('/contact') ? styles.navLinkActive : ''}`}
+                <a
+                  href="#contact"
+                  className={styles.navLink}
                   onClick={closeMenu}
                 >
                   Контакти
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>

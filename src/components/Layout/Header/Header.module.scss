@@ -1,9 +1,6 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--primary-blue);
+  position: relative;
+  background-color: var(--primary-blue-dark);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--primary-blue-dark);
   box-shadow: var(--shadow-sm);
