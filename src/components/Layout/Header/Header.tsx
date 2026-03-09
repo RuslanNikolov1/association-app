@@ -41,11 +41,6 @@ const Header: React.FC = () => {
       <div className="container">
         <div className={styles.headerContent}>
           <Link to="/" className={styles.logo} onClick={closeMenu}>
-            <img 
-              src="/istockphoto-501619427-612x612-removebg-preview.png" 
-              alt="Street Light" 
-              className={styles.streetLight}
-            />
             <span className={styles.logoMain}>АМТП</span>
           </Link>
 
@@ -77,11 +72,20 @@ const Header: React.FC = () => {
               </li>
               <li className={styles.navItem}>
                 <a
+                  href="#project-types"
+                  className={styles.navLink}
+                  onClick={closeMenu}
+                >
+                  Основни проекти
+                </a>
+              </li>
+              <li className={styles.navItem}>
+                <a
                   href="#activities"
                   className={styles.navLink}
                   onClick={closeMenu}
                 >
-                  Дейности
+                  Области на фокус
                 </a>
               </li>
               <li className={styles.navItem}>
@@ -95,11 +99,11 @@ const Header: React.FC = () => {
               </li>
               <li className={styles.navItem}>
                 <a
-                  href="#project-types"
+                  href="#core-activities"
                   className={styles.navLink}
                   onClick={closeMenu}
                 >
-                  Проектни типове
+                  Основни дейности
                 </a>
               </li>
               <li className={styles.navItem}>

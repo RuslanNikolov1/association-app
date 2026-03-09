@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import styles from './Footer.module.scss'
 
 const Footer: React.FC = () => {
@@ -19,9 +19,41 @@ const Footer: React.FC = () => {
             <h4 className={styles.footerSubtitle}>Навигация</h4>
             <nav className={styles.footerNav} aria-label="Footer navigation">
               <ul className={styles.footerNavList}>
-                <li><Link to="/" className={styles.footerLink}>Начало</Link></li>
-                <li><Link to="/services" className={styles.footerLink}>Услуги</Link></li>
-                <li><Link to="/contact" className={styles.footerLink}>Контакти</Link></li>
+                <li>
+                  <a href="#about-us" className={styles.footerLink}>
+                    За асоциацията
+                  </a>
+                </li>
+                <li>
+                  <a href="#activities" className={styles.footerLink}>
+                    Дейности
+                  </a>
+                </li>
+                <li>
+                  <a href="#team" className={styles.footerLink}>
+                    Екип
+                  </a>
+                </li>
+                <li>
+                  <a href="#project-types" className={styles.footerLink}>
+                    Основни проекти
+                  </a>
+                </li>
+                <li>
+                  <a href="#core-activities" className={styles.footerLink}>
+                    Основни дейности
+                  </a>
+                </li>
+                <li>
+                  <a href="#experience" className={styles.footerLink}>
+                    Проектен опит
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className={styles.footerLink}>
+                    Контакти
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -31,55 +63,39 @@ const Footer: React.FC = () => {
             <div className={styles.contactInfo}>
               <p className={styles.contactItem}>
                 <span className="sr-only">Email:</span>
-                <a href="mailto:info@amtp.bg" className={styles.contactLink}>
+                <a href="mailto:amtp.bulgaria@gmail.com" className={styles.contactLink}>
                   <Mail className={styles.iconInline} aria-hidden="true" focusable="false" />
-                  info@amtp.bg
-                </a>
-              </p>
-              <p className={styles.contactItem}>
-                <span className="sr-only">Телефон:</span>
-                <a href="tel:+359123456789" className={styles.contactLink}>
-                  <Phone className={styles.iconInline} aria-hidden="true" focusable="false" />
-                  +359 123 456 789
+                  amtp.bulgaria@gmail.com
                 </a>
               </p>
               <p className={styles.contactItem}>
                 <span className="sr-only">Адрес:</span>
                 <span className={styles.contactText}>
                   <MapPin className={styles.iconInline} aria-hidden="true" focusable="false" />
-                  София, България
+                  бул. Инж. Иван Иванов № 70, вх. Б,, 1000 София, България
                 </span>
               </p>
             </div>
           </div>
 
-          <div className={styles.footerSection}>
-            <h4 className={styles.footerSubtitle}>Следвайте ни</h4>
-            <div className={styles.socialLinks}>
-              <a 
-                href="#" 
-                className={styles.socialLink}
-                aria-label="LinkedIn профил"
-              >
-                <Linkedin className={styles.iconInline} aria-hidden="true" focusable="false" />
-                LinkedIn
-              </a>
-              <a 
-                href="#" 
-                className={styles.socialLink}
-                aria-label="Twitter профил"
-              >
-                <Twitter className={styles.iconInline} aria-hidden="true" focusable="false" />
-                Twitter
-              </a>
-            </div>
-          </div>
+          {/* Social links removed per updated requirements */}
         </div>
 
         <div className={styles.footerBottom}>
           <div className={styles.footerBottomContent}>
             <p className={styles.copyright}>
               © {new Date().getFullYear()} АМТП. Всички права запазени.
+            </p>
+            <p className={styles.footerCredits}>
+              Created by{' '}
+              <a
+                href="https://portfolio-website-dusky-five-28.vercel.app/"
+                className={styles.footerLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Създаден от Руслан
+              </a>
             </p>
             <div className={styles.legalLinks}>
               <Link to="/privacy" className={styles.legalLink}>

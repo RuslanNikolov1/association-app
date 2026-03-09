@@ -1,5 +1,8 @@
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: var(--primary-blue-dark);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--primary-blue-dark);
@@ -12,8 +15,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-sm) 0;
-  min-height: 80px;
+  padding: 1.5vh 0;
+  min-height: clamp(56px, 7vh, 72px);
   width: 100%;
 }
 
@@ -31,16 +34,7 @@
   opacity: 0.8;
 }
 
-.streetLight {
-  width: 65px;
-  height: 65px;
-  object-fit: contain;
-  transition: transform var(--transition-fast);
-}
-
-.logo:hover .streetLight {
-  transform: scale(1.1);
-}
+/* streetLight image styles removed with logo image */
 
 .logoMain {
   font-family: var(--font-display);
@@ -149,7 +143,7 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .headerContent {
-    min-height: 70px;
+    min-height: clamp(56px, 6vh, 64px);
   }
 
 
@@ -159,7 +153,7 @@
 
   .navList {
     position: fixed;
-    top: 70px;
+    top: clamp(56px, 6vh, 64px);
     left: 0;
     right: 0;
     background-color: var(--bg-primary);

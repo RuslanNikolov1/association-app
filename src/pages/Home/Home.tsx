@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight, Check, Clock, Cpu, Gauge, Globe, Landmark, Leaf, Mail, Map, MapPin, Navigation, Phone, Route, Send, TrafficCone, Users, Wind } from 'lucide-react'
+import { Check, Cpu, Gauge, Globe, Leaf, Mail, Map, MapPin, Navigation, Route, Send, TrafficCone, Wind } from 'lucide-react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import styles from './Home.module.scss'
 
@@ -21,7 +20,7 @@ const Home: React.FC = () => {
                 Асоциация за мобилност и транспортни политики
               </h1>
               <p className={styles.heroSubtitle}>
-                Юридическо лице с нестопанска цел за осъществяване на дейност в обществена полза.
+              Независима експертна организация, работеща за разработването на устойчиви и ефективни решения в сферата на мобилността.
               </p>
             </div>
           </div>
@@ -32,12 +31,12 @@ const Home: React.FC = () => {
       <section id="about-us" className={`section ${styles.aboutSection}`}>
         <div className={styles.aboutSectionBackground}></div>
         <div className="container">
+          <div className={styles.activitiesHeader}>
+            <h2 className={styles.activitiesTitle}>За асоциацията</h2>
+          </div>
           <div className={styles.aboutLayout}>
             <div className={styles.aboutContainerCard}>
               <div className={styles.aboutHeaderRow}>
-                <div className={styles.aboutOverline}>ЗА АСОЦИАЦИЯТА</div>
-                <div className={styles.aboutDivider}></div>
-
                 <p className={styles.aboutLeadStatementFullWidth}>
                   Асоциацията работи в сферата на транспорта, мобилността и транспортната инфраструктура, като основната ѝ мисия е да подпомага устойчивото развитие на населените места чрез по-добра свързаност, достъпност, безопасност и ефективност на транспортните системи.
                 </p>
@@ -74,13 +73,247 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Main Project Types Section */}
+      <section id="project-types" className={`section ${styles.projectTypesSection}`}>
+        <div className={styles.projectTypesSectionBackground}></div>
+        <div className="container">
+          <div className={styles.projectTypesHeader}>
+            <h2 className={styles.projectTypesTitle}>Основни проекти и дейности</h2>
+          </div>
+          
+          {/* 2.1 Project Proposals */}
+          <div className={styles.projectTypeCard}>
+            <div className={styles.projectTypeCardHeader}>
+              <div className={styles.projectTypeCardNumber}>01</div>
+              <Send className={styles.iconBadge} aria-hidden="true" focusable="false" />
+              <div className={styles.projectTypeCardLine}></div>
+            </div>
+            <div className={styles.projectTypeCardBody}>
+              <div className={styles.projectTypeCardBodyWithImage}>
+                <div className={styles.projectTypeCardTextContent}>
+                  <h3 className={styles.projectTypeCardTitle}>Подготовка на проектни предложения за европейско и национално финансиране</h3>
+                  <p className={styles.projectTypeCardText}>
+                    Предлагаме подготовка на проектни предложения в сферата на мобилността, включително разработване на проектни концепции, изготвяне на проектна документация, финансови и социално-икономически анализи за кандидатстване както по национални, така и по европейски програми.
+                  </p>
+                  <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>
+                    Освен това активно следим по различни информационни и институционални канали за отворени програми и възможности за финансиране, по които нашите партньори могат да кандидатстват.
+                  </p>
+                </div>
+                <div className={styles.projectTypeCardImageWrapper}>
+                  <img src="/Project 1.png" alt="Подготовка на проектни предложения" className={styles.projectTypeCardImage} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2.2 Transport Scheme Analyses */}
+          <div className={styles.projectTypeCard}>
+            <div className={styles.projectTypeCardHeader}>
+              <div className={styles.projectTypeCardNumber}>02</div>
+              <Route className={styles.iconBadge} aria-hidden="true" focusable="false" />
+              <div className={styles.projectTypeCardLine}></div>
+            </div>
+            <div className={styles.projectTypeCardBody}>
+              <div className={styles.projectTypeCardBodyWithImage}>
+                <div className={styles.projectTypeCardTextContent}>
+                  <h3 className={styles.projectTypeCardTitle}>Анализи на транспортни схеми</h3>
+                  <p className={styles.projectTypeCardText}>
+                    Извършваме задълбочени анализи на съществуващи транспортни схеми, включително оценка на маршрутни мрежи, натовареност на линии, връзки между различни видове транспорт и възможности за оптимизация и промени в транспортното обслужване.
+                  </p>
+                </div>
+                <div className={styles.projectTypeCardImageWrapper}>
+                  <img src="/Project 2.png" alt="Анализи на транспортни схеми" className={styles.projectTypeCardImage} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2.3 Tariff Policies */}
+          <div className={styles.projectTypeCard}>
+            <div className={styles.projectTypeCardHeader}>
+              <div className={styles.projectTypeCardNumber}>03</div>
+              <Gauge className={styles.iconBadge} aria-hidden="true" focusable="false" />
+              <div className={styles.projectTypeCardLine}></div>
+            </div>
+            <div className={styles.projectTypeCardBody}>
+              <div className={styles.projectTypeCardBodyWithImage}>
+                <div className={styles.projectTypeCardTextContent}>
+                  <h3 className={styles.projectTypeCardTitle}>Тарифни политики</h3>
+                  <p className={styles.projectTypeCardText}>
+                    Анализираме различни модели на тарифна политика в обществения транспорт, включително ефектите от промени в цените, абонаментните карти и интегрираните транспортни системи.
+                  </p>
+                  <p className={styles.projectTypeCardText}>
+                    Към разработените предложения изготвяме и необходимите нормативни промени, които позволяват тяхното практическо прилагане от съответните публични институции.
+                  </p>
+                </div>
+                <div className={styles.projectTypeCardImageWrapper}>
+                  <img src="/Project 3.png" alt="Тарифни политики" className={styles.projectTypeCardImage} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2.4 Parking Policies */}
+          <div className={styles.projectTypeCard}>
+            <div className={styles.projectTypeCardHeader}>
+              <div className={styles.projectTypeCardNumber}>04</div>
+              <MapPin className={styles.iconBadge} aria-hidden="true" focusable="false" />
+              <div className={styles.projectTypeCardLine}></div>
+            </div>
+            <div className={styles.projectTypeCardBody}>
+              <div className={styles.projectTypeCardBodyWithImage}>
+                <div className={styles.projectTypeCardTextContent}>
+                  <h3 className={styles.projectTypeCardTitle}>Паркинг политики</h3>
+                  <p className={styles.projectTypeCardText}>
+                    Разработваме анализи и модели за въвеждане или промяна на зони за платено паркиране, буферни паркинги и други инструменти за управление на автомобилния трафик в градска среда.
+                  </p>
+                  <p className={styles.projectTypeCardText}>
+                    В рамките на тези дейности изготвяме финансови, икономически и социални анализи за ефектите от въвеждане или промяна на политики за паркиране, както и предложения за необходимите нормативни изменения.
+                  </p>
+                </div>
+                <div className={styles.projectTypeCardImageWrapper}>
+                  <img src="/Project 4.png" alt="Паркинг политики" className={styles.projectTypeCardImage} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2.5 Traffic Organization */}
+          <div className={styles.projectTypeCard}>
+            <div className={styles.projectTypeCardHeader}>
+              <div className={styles.projectTypeCardNumber}>05</div>
+              <TrafficCone className={styles.iconBadge} aria-hidden="true" focusable="false" />
+              <div className={styles.projectTypeCardLine}></div>
+            </div>
+            <div className={styles.projectTypeCardBody}>
+              <div className={styles.projectTypeCardBodyWithImage}>
+                <div className={styles.projectTypeCardTextContent}>
+                  <h3 className={styles.projectTypeCardTitle}>Организация на движението</h3>
+                  <p className={styles.projectTypeCardText}>
+                    Организацията на движението включва разработване на технически решения и мерки за управление на трафика в уличната мрежа с цел подобряване на пропускателната способност, безопасността и ефективността на движението.
+                  </p>
+                  <p className={styles.projectTypeCardText}>
+                    Тази дейност обхваща както разработване на проекти за организация на движението, така и анализи и оптимизация на работата на светофарно регулирани кръстовища, базирани на реални данни за транспортните потоци.
+                  </p>
+                </div>
+                <div className={styles.projectTypeCardImageWrapper}>
+                  <img src="/Project 5.png" alt="Организация на движението" className={styles.projectTypeCardImage} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2.6 Sustainable Urban Mobility Plans */}
+          <div className={styles.projectTypeCard}>
+            <div className={styles.projectTypeCardHeader}>
+              <div className={styles.projectTypeCardNumber}>06</div>
+              <Navigation className={styles.iconBadge} aria-hidden="true" focusable="false" />
+              <div className={styles.projectTypeCardLine}></div>
+            </div>
+            <div className={styles.projectTypeCardBody}>
+              <div className={styles.projectTypeCardTextContent}>
+                <h3 className={styles.projectTypeCardTitle}>Планове за устойчива градска мобилност (ПУГМ)</h3>
+                <p className={styles.projectTypeCardText}>
+                  Планът за устойчива градска мобилност (ПУГМ) е стратегически документ за дългосрочно развитие на транспортната система на даден град или регион.
+                </p>
+                <p className={styles.projectTypeCardText}>
+                  Методологията за изготвяне на ПУГМ е разработена от Европейската комисия и се използва широко в европейските градове като инструмент за планиране на устойчив транспорт.
+                </p>
+                <p className={styles.projectTypeCardText}>
+                  Основната цел на ПУГМ е да създаде балансирана, ефективна и екологично устойчива транспортна система, която подобрява достъпността и качеството на живот в градовете.
+                </p>
+
+                <div className={styles.projectTypeSubsection}>
+                  <h4 className={styles.projectTypeSubtitle}>Какво обхваща ПУГМ</h4>
+                  <p className={styles.projectTypeCardText}>Планът разглежда цялостната транспортна система, включително:</p>
+                  <ul className={styles.projectTypeList}>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>обществен транспорт;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пешеходна и велосипедна мобилност;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>автомобилен трафик;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>паркиране;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>логистика и товарни превози;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>интеграция между различните видове транспорт.</span></li>
+                  </ul>
+                </div>
+
+                <div className={styles.projectTypeSubsection}>
+                  <h4 className={styles.projectTypeSubtitle}>Основни принципи на ПУГМ</h4>
+                  <p className={styles.projectTypeCardText}>Плановете за устойчива градска мобилност се базират на няколко основни принципа:</p>
+                  <ul className={styles.projectTypeList}>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>интегрирано планиране на транспорта и градската среда;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>участие на гражданите и заинтересованите страни;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>базиране на решенията на анализи и данни;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>баланс между различните видове транспорт;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на вредните емисии и подобряване на качеството на живот.</span></li>
+                  </ul>
+                </div>
+
+                <div className={styles.projectTypeSubsection}>
+                  <h4 className={styles.projectTypeSubtitle}>Процес на разработване</h4>
+                  <p className={styles.projectTypeCardText}>Разработването на ПУГМ включва няколко основни етапа:</p>
+                  <ol className={styles.projectTypeList} aria-label="Етапи при изработване на ПУГМ">
+                    <li><span>1️⃣ анализ на текущото състояние на транспортната система;</span></li>
+                    <li><span>2️⃣ определяне на стратегически цели;</span></li>
+                    <li><span>3️⃣ разработване на мерки и сценарии за развитие;</span></li>
+                    <li><span>4️⃣ оценка на икономическите, социалните и екологичните ефекти;</span></li>
+                    <li><span>5️⃣ изготвяне на план за изпълнение и мониторинг.</span></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Institutional Support Section */}
+      <section
+        className={`section ${styles.institutionalSupportSection}`}
+        aria-labelledby="institutional-support-heading"
+      >
+        <div className="container">
+          <div className={styles.activitiesHeader}>
+            <h2 id="institutional-support-heading" className={styles.activitiesTitle}>
+              Подкрепа на централните и териториалните органи
+            </h2>
+          </div>
+          <div className={`${styles.institutionalSupportCard} reveal`}>
+            <div className={styles.institutionalSupportText}>
+              <p className={styles.institutionalSupportLead}>
+                Асоциацията активно подпомага централните и териториалните органи
+                на изпълнителната власт при:
+              </p>
+              <ul className={styles.institutionalSupportList}>
+                <li>
+                  <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                  <span>подобряване качеството на транспортните услуги;</span>
+                </li>
+                <li>
+                  <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                  <span>формиране и прилагане на ефективни транспортни и паркинг политики;</span>
+                </li>
+                <li>
+                  <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                  <span>стратегическо планиране и проектна подготовка.</span>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.institutionalSupportImageWrapper}>
+              <img
+                src="/Planning.png"
+                alt="Планиране на транспортни политики и инфраструктура"
+                className={styles.institutionalSupportImage}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Activities Section */}
       <section id="activities" className={`section ${styles.activitiesSection}`} aria-labelledby="activities-heading">
         <div className={styles.activitiesSectionBackground}></div>
         <div className="container">
           <div className={styles.activitiesHeader}>
-            <div className={styles.activitiesOverline}>ОБЛАСТИ НА ДЕЙНОСТ</div>
-            <h2 id="activities-heading" className={styles.activitiesTitle}>Дейности и области на фокус</h2>
+            <h2 id="activities-heading" className={styles.activitiesTitle}>Области на фокус</h2>
           </div>
           
           <div className={styles.activitiesGrid} role="list" aria-label="Списък с дейности и области на фокус">
@@ -92,10 +325,10 @@ const Home: React.FC = () => {
               </div>
               <div className={styles.activityCardBody}>
                 <h3 className={styles.activityCardTitle}>Подобряване на транспортната инфраструктура</h3>
-                <p className={styles.activityCardText}>Подобряване на транспортната инфраструктура и организацията на движението.</p>
+                <p className={styles.activityCardText}>Подпомагане развитието на транспортната инфраструктура чрез анализи, предложения и експертни решения за подобряване на уличната мрежа, организацията на движението и безопасността на транспортната система.</p>
               </div>
             </div>
-            
+
             <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
               <div className={styles.activityCardHeader}>
                 <div className={styles.activityCardNumber}>02</div>
@@ -104,10 +337,10 @@ const Home: React.FC = () => {
               </div>
               <div className={styles.activityCardBody}>
                 <h3 className={styles.activityCardTitle}>Оптимизация на транспортни връзки</h3>
-                <p className={styles.activityCardText}>Оптимизация на транспортни връзки, маршрути и разписания.</p>
+                <p className={styles.activityCardText}>Анализ и оптимизация на транспортни връзки, маршрутни мрежи и разписания на обществения транспорт с цел по-ефективно обслужване на пътниците и по-добра достъпност до ключови градски зони.</p>
               </div>
             </div>
-            
+
             <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
               <div className={styles.activityCardHeader}>
                 <div className={styles.activityCardNumber}>03</div>
@@ -116,10 +349,10 @@ const Home: React.FC = () => {
               </div>
               <div className={styles.activityCardBody}>
                 <h3 className={styles.activityCardTitle}>Иновативни и технологични решения</h3>
-                <p className={styles.activityCardText}>Разработване и внедряване на иновативни и технологични решения в транспорта.</p>
+                <p className={styles.activityCardText}>Разработване и внедряване на иновативни и технологични решения в транспорта, включително използване на данни, цифрови инструменти, GIS системи и интелигентни транспортни системи за по-ефективно управление на мобилността.</p>
               </div>
             </div>
-            
+
             <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
               <div className={styles.activityCardHeader}>
                 <div className={styles.activityCardNumber}>04</div>
@@ -128,10 +361,10 @@ const Home: React.FC = () => {
               </div>
               <div className={styles.activityCardBody}>
                 <h3 className={styles.activityCardTitle}>Превозни средства с нулеви емисии</h3>
-                <p className={styles.activityCardText}>Насърчаване на превозни средства с нулеви или ниски емисии.</p>
+                <p className={styles.activityCardText}>Насърчаване на използването на превозни средства с нулеви или ниски емисии чрез анализи, стратегии и политики, подпомагащи прехода към по-екологичен транспорт.</p>
               </div>
             </div>
-            
+
             <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
               <div className={styles.activityCardHeader}>
                 <div className={styles.activityCardNumber}>05</div>
@@ -140,22 +373,22 @@ const Home: React.FC = () => {
               </div>
               <div className={styles.activityCardBody}>
                 <h3 className={styles.activityCardTitle}>Намаляване на вредните емисии</h3>
-                <p className={styles.activityCardText}>Прилагане на политики за намаляване на вредните емисии от транспорта.</p>
+                <p className={styles.activityCardText}>Разработване на политики и мерки за намаляване на вредните емисии от транспорта чрез устойчиви транспортни решения, подобряване на обществената мобилност и оптимизация на трафика.</p>
               </div>
             </div>
-            
+
             <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
               <div className={styles.activityCardHeader}>
                 <div className={styles.activityCardNumber}>06</div>
-                <TrafficCone className={styles.iconBadge} aria-hidden="true" focusable="false" />
+                <Navigation className={styles.iconBadge} aria-hidden="true" focusable="false" />
                 <div className={styles.activityCardLine}></div>
               </div>
               <div className={styles.activityCardBody}>
-                <h3 className={styles.activityCardTitle}>Адаптивно управление на трафика</h3>
-                <p className={styles.activityCardText}>Адаптивно управление на трафика и мерки за намаляване на времето за пътуване.</p>
+                <h3 className={styles.activityCardTitle}>Планове и стратегии за градска мобилност</h3>
+                <p className={styles.activityCardText}>Разработване и подпомагане приемането на стратегически документи за развитие на транспортната система, включително планове за устойчива градска мобилност, транспортни стратегии и интегрирани политики за всички участници в транспортната система.</p>
               </div>
             </div>
-            
+
             <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
               <div className={styles.activityCardHeader}>
                 <div className={styles.activityCardNumber}>07</div>
@@ -163,52 +396,10 @@ const Home: React.FC = () => {
                 <div className={styles.activityCardLine}></div>
               </div>
               <div className={styles.activityCardBody}>
-                <h3 className={styles.activityCardTitle}>Европейски и световни практики</h3>
-                <p className={styles.activityCardText}>Интегриране на добри европейски и световни практики в местните транспортни политики.</p>
+                <h3 className={styles.activityCardTitle}>Национални и европейски проекти</h3>
+                <p className={styles.activityCardText}>Подготовка и участие в национални и европейски проекти в сферата на транспорта и мобилността, включително разработване на проектни предложения и подпомагане на местни и национални институции при кандидатстване за финансиране.</p>
               </div>
             </div>
-          </div>
-          
-          <div className={styles.activitiesSupportCard}>
-            <div className={styles.supportCardContent}>
-              <div className={styles.supportCardHeader}>
-                <Landmark className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                <h3 className={styles.supportCardTitle}>Подкрепа на централните и териториалните органи</h3>
-              </div>
-              <div className={styles.supportCardLayout}>
-                <div className={styles.supportCardTextContent}>
-                  <p className={styles.supportCardText}>Асоциацията активно подпомага централните и териториалните органи на изпълнителната власт при:</p>
-                  <ul className={styles.supportCardList}>
-                    <li>
-                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                      <span>подобряване качеството на транспортните услуги;</span>
-                    </li>
-                    <li>
-                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                      <span>формиране и прилагане на ефективни транспортни и паркинг политики;</span>
-                    </li>
-                    <li>
-                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                      <span>стратегическо планиране и проектна подготовка.</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className={styles.supportCardImageWrapper}>
-                  <img 
-                    src="/Planning.png" 
-                    alt="Илюстрация на транспортни услуги и мрежа"
-                    className={styles.supportCardImage}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className={styles.activitiesFooter}>
-            <Link to="/activities" className={styles.activitiesLink}>
-              Вижте всички дейности
-              <ArrowRight className={styles.iconInline} aria-hidden="true" focusable="false" />
-            </Link>
           </div>
         </div>
       </section>
@@ -218,18 +409,22 @@ const Home: React.FC = () => {
         <div className={styles.teamSectionBackground}></div>
         <div className="container">
           <div className={styles.teamHeader}>
-            <div className={styles.teamOverline}>ЕКСПЕРТИЗА</div>
             <h2 className={styles.teamTitle}>Нашият екип</h2>
           </div>
-          
+
           <div className={styles.teamLayout}>
             <div className={styles.teamContentCard}>
-              <div className={styles.teamContentHeader}>
-                <Users className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                <h3 className={styles.teamContentTitle}>Експертна структура</h3>
-              </div>
 
-              <div className={styles.teamCardLayout}>
+              {/* Top two-column row: text left, image right */}
+              <div className={styles.teamTopRow}>
+                <div className={styles.teamTopTextColumn}>
+                  <p className={styles.teamContentText}>
+                    Екипът на Асоциацията за мобилност и транспортни политики обединява специалисти с опит в различни области на транспорта, мобилността и публичните политики. Нашата експертиза позволява комплексен подход при разработването на анализи, стратегии и конкретни решения за транспортни системи.
+                  </p>
+                  <p className={styles.teamContentText}>
+                    Екипът включва пътни експерти, транспортни специалисти, икономисти и анализатори, които работят съвместно за разработване на устойчиви и ефективни решения в областта на мобилността.
+                  </p>
+                </div>
                 <div className={styles.teamImageWrapper}>
                   <img
                     src="/People.png"
@@ -237,222 +432,194 @@ const Home: React.FC = () => {
                     className={styles.teamImage}
                   />
                 </div>
-
-                <div className={styles.teamCardTextColumn}>
-                  <p className={styles.teamContentText}>
-                    Екипът на АМТП включва експерти с дългогодишен практически опит в:
-                  </p>
-                  <ul className={styles.teamExpertiseList}>
-                    <li>
-                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                      <span>управление на мобилността;</span>
-                    </li>
-                    <li>
-                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                      <span>обществен транспорт и паркиране;</span>
-                    </li>
-                    <li>
-                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                      <span>работа с местната власт;</span>
-                    </li>
-                    <li>
-                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                      <span>разработване на нормативни и стратегически документи;</span>
-                    </li>
-                    <li>
-                      <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
-                      <span>управление и изпълнение на проекти.</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
+
+              {/* Full-width expertise grid below */}
+              <div className={styles.teamExpertiseBlock}>
+                <p className={styles.teamExpertiseLabel}>Основните области на експертиза на екипа включват:</p>
+                <ul className={styles.teamExpertiseGrid}>
+                  <li>
+                    <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                    <span>управление на мобилността и транспортното планиране;</span>
+                  </li>
+                  <li>
+                    <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                    <span>обществен транспорт и политики за паркиране;</span>
+                  </li>
+                  <li>
+                    <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                    <span>работа с местната власт и публични институции;</span>
+                  </li>
+                  <li>
+                    <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                    <span>разработване на нормативни и стратегически документи;</span>
+                  </li>
+                  <li>
+                    <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                    <span>подготовка, управление и изпълнение на проекти;</span>
+                  </li>
+                  <li>
+                    <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                    <span>пътна безопасност и анализ на транспортни потоци;</span>
+                  </li>
+                  <li>
+                    <Check className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                    <span>пътно проектиране и организация на движението.</span>
+                  </li>
+                </ul>
+              </div>
+
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Project Types Section */}
-      <section id="project-types" className={`section ${styles.projectTypesSection}`}>
-        <div className={styles.projectTypesSectionBackground}></div>
+      {/* Core Activities Section */}
+      <section id="core-activities" className={`section ${styles.coreActivitiesSection}`} aria-labelledby="core-activities-heading">
+        <div className={styles.coreActivitiesSectionBackground}></div>
         <div className="container">
-          <div className={styles.projectTypesHeader}>
-            <div className={styles.projectTypesOverline}>ПРОЕКТНИ ТИПОВЕ</div>
-            <h2 className={styles.projectTypesTitle}>Основни типове проекти и дейности</h2>
+          <div className={styles.coreActivitiesHeader}>
+            <h2 id="core-activities-heading" className={styles.coreActivitiesTitle}>Основни дейности</h2>
           </div>
-          
-          {/* 2.1 Financial and Social Analyses */}
-          <div className={styles.projectTypeCard}>
-            <div className={styles.projectTypeCardHeader}>
-              <div className={styles.projectTypeCardNumber}>01</div>
-              <Gauge className={styles.iconBadge} aria-hidden="true" focusable="false" />
-              <div className={styles.projectTypeCardLine}></div>
-            </div>
-            <div className={styles.projectTypeCardBody}>
-              <div className={styles.projectTypeCardTextContent}>
-                <h3 className={styles.projectTypeCardTitle}>Финансови и социални анализи на транспортни и паркинг политики</h3>
-                <p className={styles.projectTypeCardText}>АМТП извършва задълбочени финансови, икономически и социални анализи, свързани с:</p>
-                <div className={styles.projectTypePrimaryRow}>
-                  <ul className={styles.projectTypeListPrimary}>
-                    <li><Route className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>Транспортни схеми;</span></li>
-                    <li><Landmark className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>Тарифни политики в обществения транспорт;</span></li>
-                    <li><MapPin className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>Въвеждане или промяна на зони за платено паркиране;</span></li>
-                    <li><TrafficCone className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>Ефекти от различни модели на организация на движението.</span></li>
-                  </ul>
-                  <div className={styles.projectTypePrimaryImageWrapper}>
-                    <img
-                      src="/Analysis.jpg"
-                      alt="Визуализация на анализ на транспортни политики"
-                      className={styles.projectTypePrimaryImage}
-                    />
-                  </div>
+
+          <div className={styles.coreActivitiesGrid}>
+
+            {/* 1 - Разработване на проекти */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="Разработване на проекти за организация на движението">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <Navigation className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
                 </div>
-                <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>Тези анализи имат за цел:</p>
-                <ul className={styles.projectTypeList}>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>да оценят реалните ползи и разходи от прилагането на конкретни политики;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>да подпомогнат вземането на информирани управленски решения;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>да осигурят аргументация пред общински съвети, администрации и граждани.</span></li>
+                <h3 className={styles.coreActivityTitle}>Разработване на проекти за организация на движението</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Изготвяме предложения и проекти за организация на движението в отделни улици, кръстовища или цели зони на населените места. Тези проекти включват:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>режими на движение;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пътна сигнализация;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пътна маркировка;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>организация на паркирането;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>мерки за повишаване на пътната безопасност;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>подобряване на условията за пешеходци и велосипедисти.</span></li>
                 </ul>
               </div>
-            </div>
+            </article>
+
+            {/* 2 - Анализ на транспортните потоци */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="Анализ на транспортните потоци">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <Gauge className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
+                </div>
+                <h3 className={styles.coreActivityTitle}>Анализ на транспортните потоци</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Извършваме преброявания и анализи на транспортните потоци, които включват:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>интензивност на автомобилния трафик;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>разпределение на транспортните потоци по направления;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пешеходни потоци;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>натоварване на кръстовища;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>анализ на конфликтни точки.</span></li>
+                </ul>
+                <p className={styles.coreActivityFootnote}>Тези данни служат като основа за разработване на ефективни решения за организация на движението.</p>
+              </div>
+            </article>
+
+            {/* 3 - Проекти за светофарни уредби */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="Проекти за светофарни уредби">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <TrafficCone className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
+                </div>
+                <h3 className={styles.coreActivityTitle}>Проекти за светофарни уредби</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Разработваме предложения за проекти на светофарни уредби, включително:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>определяне на фази на регулиране;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>времетраене на сигналите;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизиране на цикъла на светофара;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>подобряване на пропускателната способност на кръстовищата.</span></li>
+                </ul>
+                <p className={styles.coreActivityFootnote}>Решенията се базират на реални данни за транспортните потоци и анализ на натоварванията в различни часови периоди.</p>
+              </div>
+            </article>
+
+            {/* 4 - Координация на светофарни уредби */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="Координация на светофарни уредби">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <Route className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
+                </div>
+                <h3 className={styles.coreActivityTitle}>Координация на светофарни уредби</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Предлагаме разработване на координационни планове за светофарно регулирани кръстовища, които позволяват:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>синхронизация на светофарите по основни булеварди;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>създаване на „зелени вълни";</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на времето за пътуване;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>по-ефективно управление на трафика.</span></li>
+                </ul>
+              </div>
+            </article>
+
+            {/* 5 - GIS заснемане */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="GIS заснемане на знаковото стопанство">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <Map className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
+                </div>
+                <h3 className={styles.coreActivityTitle}>GIS заснемане на знаковото стопанство</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Извършваме заснемане на съществуващото знаково стопанство и организация на движението чрез GIS платформи. Това включва:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>позициониране на пътни знаци;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пътна маркировка;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>светофарни уредби;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>други елементи на организацията на движението.</span></li>
+                </ul>
+                <p className={styles.coreActivityFootnote}>Събраната информация се използва за създаване на цифрови карти и бази данни, които подпомагат управлението на транспортната инфраструктура.</p>
+              </div>
+            </article>
+
+            {/* 6 - Симулации на трафика */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="Симулации на трафика">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <Cpu className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
+                </div>
+                <h3 className={styles.coreActivityTitle}>Симулации на трафика</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Използваме транспортни модели и софтуерни инструменти за симулиране на различни варианти на организация на движението. Чрез симулации могат да се оценят:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>ефектите от промени в организацията на движението;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>влиянието на нови инфраструктурни решения;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизация на работата на кръстовища;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на задръстванията.</span></li>
+                </ul>
+                <p className={styles.coreActivityFootnote}>Този подход позволява предварителна оценка на различни решения и избор на най-ефективния вариант.</p>
+              </div>
+            </article>
+
           </div>
 
-          {/* 2.2 Project Proposals */}
-          <div className={styles.projectTypeCard}>
-            <div className={styles.projectTypeCardHeader}>
-              <div className={styles.projectTypeCardNumber}>02</div>
-              <Send className={styles.iconBadge} aria-hidden="true" focusable="false" />
-              <div className={styles.projectTypeCardLine}></div>
-            </div>
-            <div className={styles.projectTypeCardBody}>
-                <div className={styles.projectTypeCardTextContent}>
-                  <h3 className={styles.projectTypeCardTitle}>Подготовка на проектни предложения за европейско и национално финансиране</h3>
-                  <p className={styles.projectTypeCardText}>Асоциацията подпомага общини и държавни структури при:</p>
-              <ul className={styles.projectTypeList}>
-                <li><Send className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>разработване на проектни предложения;</span></li>
-                <li><Mail className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>попълване на апликационни форми;</span></li>
-                <li><Route className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>структуриране на проектната логика и дейности;</span></li>
-                <li><Gauge className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>изготвяне на анализ „разходи–ползи\" (АРП);</span></li>
-                <li><Globe className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пазарни проучвания и обосновки;</span></li>
-                <li><Landmark className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>съответствие с изискванията на конкретните финансиращи програми.</span></li>
+          <div className={styles.coreActivitiesOutcome}>
+            <div className={styles.coreActivitiesOutcomeInner}>
+              <p className={styles.coreActivitiesOutcomeLabel}>С проектите и анализите за организация на движението се постигат:</p>
+              <ul className={styles.coreActivitiesOutcomeList}>
+                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>подобряване на пропускателната способност на уличната мрежа;</span></li>
+                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на задръстванията;</span></li>
+                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>повишаване на пътната безопасност;</span></li>
+                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>по-добра работа на светофарно регулираните кръстовища;</span></li>
+                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>по-ефективно управление на транспортната система.</span></li>
               </ul>
-                  <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>Работата обхваща както европейски програми, така и национални източници на финансиране.</p>
-                </div>
             </div>
           </div>
 
-          {/* 2.3 GPOD */}
-          <div className={styles.projectTypeCard}>
-            <div className={styles.projectTypeCardHeader}>
-              <div className={styles.projectTypeCardNumber}>03</div>
-              <TrafficCone className={styles.iconBadge} aria-hidden="true" focusable="false" />
-              <div className={styles.projectTypeCardLine}></div>
-            </div>
-            <div className={styles.projectTypeCardBody}>
-              <h3 className={styles.projectTypeCardTitle}>Генерален план за организация на движението (ГПОД)</h3>
-
-              <div className={styles.gpodReport} aria-label="Експертен преглед: ГПОД">
-                <div className={styles.projectTypeSubsection}>
-                  <h4 className={styles.projectTypeSubtitle}>Какво е ГПОД?</h4>
-                  <p className={styles.projectTypeCardText}>
-                    <span className={styles.gpodTerm}>Генералният план за организация на движението (ГПОД)</span> е стратегически и технически документ,
-                    регламентиран с <span className={styles.gpodTerm}>Наредба № РД-02-20-2</span> от 24.10.2022 г.
-                  </p>
-
-                  <dl className={styles.gpodDefinitions}>
-                    <div className={styles.gpodDefinitionRow}>
-                      <dt className={styles.gpodDefinitionTerm}>Определя</dt>
-                      <dd className={styles.gpodDefinitionValue}>
-                        принципите, мерките, схемите и правилата за организация на движението по пътищата, отворени за обществено ползване.
-                      </dd>
-                    </div>
-                    <div className={styles.gpodDefinitionRow}>
-                      <dt className={styles.gpodDefinitionTerm}>Обхват</dt>
-                      <dd className={styles.gpodDefinitionValue}>
-                        населено място или територия, включително ключови улици, кръстовища, зони с конфликтни точки и режим на движение.
-                      </dd>
-                    </div>
-                  </dl>
-
-                  <div className={styles.gpodCallouts} role="list" aria-label="Ключови акценти">
-                    <aside className={styles.gpodCallout} role="listitem">
-                      <h5 className={styles.gpodCalloutTitle}>Дефиниции и термини</h5>
-                      <p className={styles.gpodCalloutText}>
-                        <span className={styles.gpodTerm}>ГПОД</span> работи като “рамка”, върху която стъпват последващите схеми, проекти и решения на общината.
-                      </p>
-                    </aside>
-                    <aside className={styles.gpodCallout} role="listitem">
-                      <h5 className={styles.gpodCalloutTitle}>Нормативна проследимост</h5>
-                      <p className={styles.gpodCalloutText}>
-                        Всяка препоръка се обвързва с конкретни цели, критерии и изпълнимост — така документът е защитим пред институции и общественост.
-                      </p>
-                    </aside>
-                  </div>
-                </div>
-
-              <div className={styles.projectTypeSubsection}>
-                <h4 className={styles.projectTypeSubtitle}>Как изглежда процесът (схема)</h4>
-                <ol className={styles.gpodTimeline} aria-label="Етапи при изработване на ГПОД">
-                  <li className={styles.gpodTimelineItem}>
-                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
-                    <div className={styles.gpodTimelineContent}>
-                      <h5 className={styles.gpodTimelineTitle}>1) Данни и обследване</h5>
-                      <p className={styles.gpodTimelineText}>Трафик, ПТП, потоци, паркиране, ОТ, пешеходна/вело среда, теренни проверки.</p>
-                    </div>
-                  </li>
-                  <li className={styles.gpodTimelineItem}>
-                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
-                    <div className={styles.gpodTimelineContent}>
-                      <h5 className={styles.gpodTimelineTitle}>2) Анализ и проблемни зони</h5>
-                      <p className={styles.gpodTimelineText}>Конфликтни точки, капацитет, скоростни режими, риск за уязвими участници.</p>
-                    </div>
-                  </li>
-                  <li className={styles.gpodTimelineItem}>
-                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
-                    <div className={styles.gpodTimelineContent}>
-                      <h5 className={styles.gpodTimelineTitle}>3) Схеми и мерки</h5>
-                      <p className={styles.gpodTimelineText}>Организация на движението, сигнализация/маркировка, ОТ приоритет, паркинг решения.</p>
-                    </div>
-                  </li>
-                  <li className={styles.gpodTimelineItem}>
-                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
-                    <div className={styles.gpodTimelineContent}>
-                      <h5 className={styles.gpodTimelineTitle}>4) План за изпълнение</h5>
-                      <p className={styles.gpodTimelineText}>Приоритизация, бюджет/етапност, индикатори, мониторинг и актуализация на мерките.</p>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-
-              <div className={styles.projectTypeSubsection}>
-                <h4 className={styles.projectTypeSubtitle}>Защо се изработва ГПОД?</h4>
-                  <div>
-                    <p className={styles.projectTypeCardText}>ГПОД се разработва с цел:</p>
-                    <ul className={styles.projectTypeList}>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>повишаване на пътната безопасност;</span></li>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>ясно регламентиране на движението на всички участници – автомобили, пешеходци, велосипедисти, обществен транспорт;</span></li>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизиране на трафика и намаляване на конфликтните точки;</span></li>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>създаване на предвидима и разбираема транспортна среда.</span></li>
-                    </ul>
-                  </div>
-                <aside className={styles.gpodCalloutEmphasis} aria-label="Връзка с пътната безопасност">
-                  <h5 className={styles.gpodCalloutTitle}>Връзка с пътната безопасност</h5>
-                  <ul className={styles.projectTypeList}>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>идентифицира рискови участъци и зони с концентрация на ПТП;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>предлага мерки за ограничаване на скоростта и конфликтите;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>въвежда адекватна сигнализация, маркировка и режими на движение;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>осигурява по-добра защита на уязвимите участници в движението.</span></li>
-                  </ul>
-                </aside>
-              </div>
-
-              <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>
-                На практика <span className={styles.gpodTerm}>ГПОД</span> е основният инструмент, чрез който една община планира и управлява безопасността и
-                ефективността на движението в дългосрочен план.
-              </p>
-              <p className={styles.projectTypeCardHighlight}>АМТП разработва ГПОД в пълно съответствие с нормативната уредба и добрите европейски практики.</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -461,7 +628,6 @@ const Home: React.FC = () => {
         <div className={styles.completedProjectsSectionBackground}></div>
         <div className="container">
           <div className={styles.completedProjectsHeader}>
-            <div className={styles.completedProjectsOverline}>ПРОЕКТЕН ОПИТ</div>
             <h2 className={styles.completedProjectsTitle}>Реализирани и текущи проекти</h2>
           </div>
           
@@ -487,6 +653,10 @@ const Home: React.FC = () => {
                   <MapPin className={styles.iconBullet} aria-hidden="true" focusable="false" />
                   <span>Самоков</span>
                 </li>
+                <li>
+                  <MapPin className={styles.iconBullet} aria-hidden="true" focusable="false" />
+                  <span>Дупница</span>
+                </li>
               </ul>
               <p className={styles.completedProjectsCardText} style={{ marginTop: 'var(--spacing-xl)' }}>
                 Проектите обхващат както аналитични и стратегически дейности, така и реално приложими решения за подобряване на транспорта и мобилността.
@@ -500,27 +670,14 @@ const Home: React.FC = () => {
       <section id="contact" className={`section ${styles.contactSection}`}>
         <div className="container">
           <h2 className={`text-center ${styles.sectionTitle}`}>
-            <Phone className={styles.iconTitle} aria-hidden="true" focusable="false" />
             Контакти
           </h2>
           <div className="grid grid-cols-2">
             <div className="reveal">
               <h3>Свържете се с нас</h3>
               <div className={styles.contactInfo}>
-                <p><MapPin className={styles.iconBullet} aria-hidden="true" focusable="false" /><strong>Адрес:</strong> ул. "Примерна" №10, 1000 София, България</p>
-                <p><Phone className={styles.iconBullet} aria-hidden="true" focusable="false" /><strong>Телефон:</strong> +359 2 123 4567</p>
-                <p><Mail className={styles.iconBullet} aria-hidden="true" focusable="false" /><strong>Имейл:</strong> info@amtp.bg</p>
-                <p><Clock className={styles.iconBullet} aria-hidden="true" focusable="false" /><strong>Работно време:</strong> Пон-Пет, 09:00 - 17:00 ч.</p>
-              </div>
-              <div className={styles.contactActions}>
-                <Link to="/contact" className="btn btn-primary">
-                  <Send className={styles.iconInline} aria-hidden="true" focusable="false" />
-                  Изпратете съобщение
-                </Link>
-                <Link to="/contact" className="btn btn-outline">
-                  <Map className={styles.iconInline} aria-hidden="true" focusable="false" />
-                  Вижте картата
-                </Link>
+                <p><MapPin className={styles.iconBullet} aria-hidden="true" focusable="false" /><strong>Адрес:</strong>бул. Инж. Иван Иванов № 70, вх. Б,, 1000 София, България</p>
+                <p><Mail className={styles.iconBullet} aria-hidden="true" focusable="false" /><strong>Имейл:</strong>amtp.bulgaria@gmail.com</p>
               </div>
             </div>
             <div className="reveal">
