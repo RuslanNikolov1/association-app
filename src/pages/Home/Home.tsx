@@ -9,6 +9,51 @@ const Home: React.FC = () => {
   useScrollReveal()
   useScrollReveal()
 
+  const focusAreas = [
+    {
+      number: '01',
+      Icon: Navigation,
+      title: 'Подобряване на транспортната инфраструктура',
+      text: 'Подпомагане развитието на транспортната инфраструктура чрез анализи, предложения и експертни решения за подобряване на уличната мрежа, организацията на движението и безопасността на транспортната система.'
+    },
+    {
+      number: '02',
+      Icon: Route,
+      title: 'Оптимизация на транспортни връзки',
+      text: 'Анализ и оптимизация на транспортни връзки, маршрутни мрежи и разписания на обществения транспорт с цел по-ефективно обслужване на пътниците и по-добра достъпност до ключови градски зони.'
+    },
+    {
+      number: '03',
+      Icon: Cpu,
+      title: 'Иновативни и технологични решения',
+      text: 'Разработване и внедряване на иновативни и технологични решения в транспорта, включително използване на данни, цифрови инструменти, GIS системи и интелигентни транспортни системи за по-ефективно управление на мобилността.'
+    },
+    {
+      number: '04',
+      Icon: Leaf,
+      title: 'Превозни средства с нулеви емисии',
+      text: 'Насърчаване на използването на превозни средства с нулеви или ниски емисии чрез анализи, стратегии и политики, подпомагащи прехода към по-екологичен транспорт.'
+    },
+    {
+      number: '05',
+      Icon: Wind,
+      title: 'Намаляване на вредните емисии',
+      text: 'Разработване на политики и мерки за намаляване на вредните емисии от транспорта чрез устойчиви транспортни решения, подобряване на обществената мобилност и оптимизация на трафика.'
+    },
+    {
+      number: '06',
+      Icon: Navigation,
+      title: 'Планове и стратегии за градска мобилност',
+      text: 'Разработване и подпомагане приемането на стратегически документи за развитие на транспортната система, включително планове за устойчива градска мобилност, транспортни стратегии и интегрирани политики за всички участници в транспортната система.'
+    },
+    {
+      number: '07',
+      Icon: Globe,
+      title: 'Национални и европейски проекти',
+      text: 'Подготовка и участие в национални и европейски проекти в сферата на транспорта и мобилността, включително разработване на проектни предложения и подпомагане на местни и национални институции при кандидатстване за финансиране.'
+    }
+  ] as const
+
   return (
     <div className={styles.home}>
       {/* Hero Section */}
@@ -200,13 +245,157 @@ const Home: React.FC = () => {
                   <img src="/Project 5.png" alt="Организация на движението" className={styles.projectTypeCardImage} />
                 </div>
               </div>
+
+              <div className={styles.projectTypeSubsection}>
+                <h4 className={styles.projectTypeSubtitle}>Области на фокус</h4>
+                <div className={styles.activitiesGrid} role="list" aria-label="Списък с дейности и области на фокус">
+                  {focusAreas.map(({ number, Icon, title, text }) => (
+                    <div key={number} className={`${styles.activityCardInstitutional} reveal`} role="listitem">
+                      <div className={styles.activityCardHeader}>
+                        <div className={styles.activityCardNumber}>{number}</div>
+                        <Icon className={styles.iconBadge} aria-hidden="true" focusable="false" />
+                        <div className={styles.activityCardLine}></div>
+                      </div>
+                      <div className={styles.activityCardBody}>
+                        <h3 className={styles.activityCardTitle}>{title}</h3>
+                        <p className={styles.activityCardText}>{text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.projectTypeCard}>
+            <div className={styles.projectTypeCardHeader}>
+              <div className={styles.projectTypeCardNumber}>06</div>
+              <TrafficCone className={styles.iconBadge} aria-hidden="true" focusable="false" />
+              <div className={styles.projectTypeCardLine}></div>
+            </div>
+            <div className={styles.projectTypeCardBody}>
+              <h3 className={styles.projectTypeCardTitle}>Генерален план за организация на движението (ГПОД)</h3>
+
+              <div className={styles.gpodReport} aria-label="Експертен преглед: ГПОД">
+                <div className={styles.projectTypeSubsection}>
+                  <h4 className={styles.projectTypeSubtitle}>Какво е ГПОД?</h4>
+                  <p className={styles.projectTypeCardText}>
+                    <span className={styles.gpodTerm}>Генералният план за организация на движението (ГПОД)</span> е стратегически и технически документ,
+                    регламентиран с <span className={styles.gpodTerm}>Наредба № РД-02-20-2</span> от 24.10.2022 г.
+                  </p>
+
+                  <dl className={styles.gpodDefinitions}>
+                    <div className={styles.gpodDefinitionRow}>
+                      <dt className={styles.gpodDefinitionTerm}>Определя</dt>
+                      <dd className={styles.gpodDefinitionValue}>
+                        принципите, мерките, схемите и правилата за организация на движението по пътищата, отворени за обществено ползване.
+                      </dd>
+                    </div>
+                    <div className={styles.gpodDefinitionRow}>
+                      <dt className={styles.gpodDefinitionTerm}>Обхват</dt>
+                      <dd className={styles.gpodDefinitionValue}>
+                        населено място или територия, включително ключови улици, кръстовища, зони с конфликтни точки и режим на движение.
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <div className={styles.gpodCallouts} role="list" aria-label="Ключови акценти">
+                    <aside className={styles.gpodCallout} role="listitem">
+                      <h5 className={styles.gpodCalloutTitle}>Дефиниции и термини</h5>
+                      <p className={styles.gpodCalloutText}>
+                        <span className={styles.gpodTerm}>ГПОД</span> работи като “рамка”, върху която стъпват последващите схеми, проекти и решения на общината.
+                      </p>
+                    </aside>
+                    <aside className={styles.gpodCallout} role="listitem">
+                      <h5 className={styles.gpodCalloutTitle}>Нормативна проследимост</h5>
+                      <p className={styles.gpodCalloutText}>
+                        Всяка препоръка се обвързва с конкретни цели, критерии и изпълнимост — така документът е защитим пред институции и общественост.
+                      </p>
+                    </aside>
+                  </div>
+                </div>
+
+              <div className={styles.projectTypeSubsection}>
+                <h4 className={styles.projectTypeSubtitle}>Как изглежда процесът (схема)</h4>
+                <ol className={styles.gpodTimeline} aria-label="Етапи при изработване на ГПОД">
+                  <li className={styles.gpodTimelineItem}>
+                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
+                    <div className={styles.gpodTimelineContent}>
+                      <h5 className={styles.gpodTimelineTitle}>1) Данни и обследване</h5>
+                      <p className={styles.gpodTimelineText}>Трафик, ПТП, потоци, паркиране, ОТ, пешеходна/вело среда, теренни проверки.</p>
+                    </div>
+                  </li>
+                  <li className={styles.gpodTimelineItem}>
+                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
+                    <div className={styles.gpodTimelineContent}>
+                      <h5 className={styles.gpodTimelineTitle}>2) Анализ и проблемни зони</h5>
+                      <p className={styles.gpodTimelineText}>Конфликтни точки, капацитет, скоростни режими, риск за уязвими участници.</p>
+                    </div>
+                  </li>
+                  <li className={styles.gpodTimelineItem}>
+                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
+                    <div className={styles.gpodTimelineContent}>
+                      <h5 className={styles.gpodTimelineTitle}>3) Схеми и мерки</h5>
+                      <p className={styles.gpodTimelineText}>Организация на движението, сигнализация/маркировка, ОТ приоритет, паркинг решения.</p>
+                    </div>
+                  </li>
+                  <li className={styles.gpodTimelineItem}>
+                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
+                    <div className={styles.gpodTimelineContent}>
+                      <h5 className={styles.gpodTimelineTitle}>4) План за изпълнение</h5>
+                      <p className={styles.gpodTimelineText}>Приоритизация, бюджет/етапност, индикатори, мониторинг и актуализация на мерките.</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <div className={styles.projectTypeSubsection}>
+                <h4 className={styles.projectTypeSubtitle}>Защо се изработва ГПОД?</h4>
+                <div className={`${styles.gpodTwoColumn} ${styles.gpodWhyTwoColumn}`}>
+                  <div className={styles.gpodWhyContent}>
+                    <p className={styles.projectTypeCardText}>ГПОД се разработва с цел:</p>
+                    <ul className={styles.projectTypeList}>
+                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>повишаване на пътната безопасност;</span></li>
+                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>ясно регламентиране на движението на всички участници – автомобили, пешеходци, велосипедисти, обществен транспорт;</span></li>
+                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизиране на трафика и намаляване на конфликтните точки;</span></li>
+                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>създаване на предвидима и разбираема транспортна среда.</span></li>
+                    </ul>
+                  </div>
+
+                  <div className={styles.gpodImageWrapper}>
+                    <img
+                      src="/GPOD.png"
+                      alt="Схема: Генерален план за организация на движението (ГПОД)"
+                      className={styles.gpodImage}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+                <aside className={styles.gpodCalloutEmphasis} aria-label="Връзка с пътната безопасност">
+                  <h5 className={styles.gpodCalloutTitle}>Връзка с пътната безопасност</h5>
+                  <ul className={styles.projectTypeList}>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>идентифицира рискови участъци и зони с концентрация на ПТП;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>предлага мерки за ограничаване на скоростта и конфликтите;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>въвежда адекватна сигнализация, маркировка и режими на движение;</span></li>
+                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>осигурява по-добра защита на уязвимите участници в движението.</span></li>
+                  </ul>
+                </aside>
+              </div>
+
+              <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>
+                На практика <span className={styles.gpodTerm}>ГПОД</span> е основният инструмент, чрез който една община планира и управлява безопасността и
+                ефективността на движението в дългосрочен план.
+              </p>
+              <p className={styles.projectTypeCardHighlight}>АМТП разработва ГПОД в пълно съответствие с нормативната уредба и добрите европейски практики.</p>
+              </div>
             </div>
           </div>
 
           {/* 2.6 Sustainable Urban Mobility Plans */}
           <div className={styles.projectTypeCard}>
             <div className={styles.projectTypeCardHeader}>
-              <div className={styles.projectTypeCardNumber}>06</div>
+              <div className={styles.projectTypeCardNumber}>07</div>
               <Navigation className={styles.iconBadge} aria-hidden="true" focusable="false" />
               <div className={styles.projectTypeCardLine}></div>
             </div>
@@ -237,15 +426,33 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className={styles.projectTypeSubsection}>
-                  <h4 className={styles.projectTypeSubtitle}>Основни принципи на ПУГМ</h4>
-                  <p className={styles.projectTypeCardText}>Плановете за устойчива градска мобилност се базират на няколко основни принципа:</p>
-                  <ul className={styles.projectTypeList}>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>интегрирано планиране на транспорта и градската среда;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>участие на гражданите и заинтересованите страни;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>базиране на решенията на анализи и данни;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>баланс между различните видове транспорт;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на вредните емисии и подобряване на качеството на живот.</span></li>
-                  </ul>
+                  <div className={`${styles.gpodTwoColumn} ${styles.pugmTwoColumn}`}>
+                    <div>
+                      <h4 className={styles.projectTypeSubtitle}>Основни принципи на ПУГМ</h4>
+                      <p className={styles.projectTypeCardText}>
+                        Плановете за устойчива градска мобилност
+                        <br />
+                        се базират на няколко основни принципа:
+                      </p>
+                      <ul className={styles.projectTypeList}>
+                        <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>интегрирано планиране на транспорта и градската среда;</span></li>
+                        <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>участие на гражданите и заинтересованите страни;</span></li>
+                        <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>базиране на решенията на анализи и данни;</span></li>
+                        <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>баланс между различните видове транспорт;</span></li>
+                        <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на вредните емисии и подобряване на качеството на живот.</span></li>
+                      </ul>
+                    </div>
+
+                    <div className={styles.gpodImageWrapper}>
+                      <img
+                        src="/PUGM.png"
+                        alt="ПУГМ: план за устойчива градска мобилност"
+                        className={styles.pugmImage}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <div className={styles.projectTypeSubsection}>
@@ -303,102 +510,6 @@ const Home: React.FC = () => {
                 alt="Планиране на транспортни политики и инфраструктура"
                 className={styles.institutionalSupportImage}
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Activities Section */}
-      <section id="activities" className={`section ${styles.activitiesSection}`} aria-labelledby="activities-heading">
-        <div className={styles.activitiesSectionBackground}></div>
-        <div className="container">
-          <div className={styles.activitiesHeader}>
-            <h2 id="activities-heading" className={styles.activitiesTitle}>Области на фокус</h2>
-          </div>
-          
-          <div className={styles.activitiesGrid} role="list" aria-label="Списък с дейности и области на фокус">
-            <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
-              <div className={styles.activityCardHeader}>
-                <div className={styles.activityCardNumber}>01</div>
-                <Navigation className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                <div className={styles.activityCardLine}></div>
-              </div>
-              <div className={styles.activityCardBody}>
-                <h3 className={styles.activityCardTitle}>Подобряване на транспортната инфраструктура</h3>
-                <p className={styles.activityCardText}>Подпомагане развитието на транспортната инфраструктура чрез анализи, предложения и експертни решения за подобряване на уличната мрежа, организацията на движението и безопасността на транспортната система.</p>
-              </div>
-            </div>
-
-            <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
-              <div className={styles.activityCardHeader}>
-                <div className={styles.activityCardNumber}>02</div>
-                <Route className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                <div className={styles.activityCardLine}></div>
-              </div>
-              <div className={styles.activityCardBody}>
-                <h3 className={styles.activityCardTitle}>Оптимизация на транспортни връзки</h3>
-                <p className={styles.activityCardText}>Анализ и оптимизация на транспортни връзки, маршрутни мрежи и разписания на обществения транспорт с цел по-ефективно обслужване на пътниците и по-добра достъпност до ключови градски зони.</p>
-              </div>
-            </div>
-
-            <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
-              <div className={styles.activityCardHeader}>
-                <div className={styles.activityCardNumber}>03</div>
-                <Cpu className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                <div className={styles.activityCardLine}></div>
-              </div>
-              <div className={styles.activityCardBody}>
-                <h3 className={styles.activityCardTitle}>Иновативни и технологични решения</h3>
-                <p className={styles.activityCardText}>Разработване и внедряване на иновативни и технологични решения в транспорта, включително използване на данни, цифрови инструменти, GIS системи и интелигентни транспортни системи за по-ефективно управление на мобилността.</p>
-              </div>
-            </div>
-
-            <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
-              <div className={styles.activityCardHeader}>
-                <div className={styles.activityCardNumber}>04</div>
-                <Leaf className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                <div className={styles.activityCardLine}></div>
-              </div>
-              <div className={styles.activityCardBody}>
-                <h3 className={styles.activityCardTitle}>Превозни средства с нулеви емисии</h3>
-                <p className={styles.activityCardText}>Насърчаване на използването на превозни средства с нулеви или ниски емисии чрез анализи, стратегии и политики, подпомагащи прехода към по-екологичен транспорт.</p>
-              </div>
-            </div>
-
-            <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
-              <div className={styles.activityCardHeader}>
-                <div className={styles.activityCardNumber}>05</div>
-                <Wind className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                <div className={styles.activityCardLine}></div>
-              </div>
-              <div className={styles.activityCardBody}>
-                <h3 className={styles.activityCardTitle}>Намаляване на вредните емисии</h3>
-                <p className={styles.activityCardText}>Разработване на политики и мерки за намаляване на вредните емисии от транспорта чрез устойчиви транспортни решения, подобряване на обществената мобилност и оптимизация на трафика.</p>
-              </div>
-            </div>
-
-            <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
-              <div className={styles.activityCardHeader}>
-                <div className={styles.activityCardNumber}>06</div>
-                <Navigation className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                <div className={styles.activityCardLine}></div>
-              </div>
-              <div className={styles.activityCardBody}>
-                <h3 className={styles.activityCardTitle}>Планове и стратегии за градска мобилност</h3>
-                <p className={styles.activityCardText}>Разработване и подпомагане приемането на стратегически документи за развитие на транспортната система, включително планове за устойчива градска мобилност, транспортни стратегии и интегрирани политики за всички участници в транспортната система.</p>
-              </div>
-            </div>
-
-            <div className={`${styles.activityCardInstitutional} reveal`} role="listitem">
-              <div className={styles.activityCardHeader}>
-                <div className={styles.activityCardNumber}>07</div>
-                <Globe className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                <div className={styles.activityCardLine}></div>
-              </div>
-              <div className={styles.activityCardBody}>
-                <h3 className={styles.activityCardTitle}>Национални и европейски проекти</h3>
-                <p className={styles.activityCardText}>Подготовка и участие в национални и европейски проекти в сферата на транспорта и мобилността, включително разработване на проектни предложения и подпомагане на местни и национални институции при кандидатстване за финансиране.</p>
-              </div>
             </div>
           </div>
         </div>
