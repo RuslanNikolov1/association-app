@@ -64,9 +64,6 @@ const Home: React.FC = () => {
               <h1 className={styles.heroTitle}>
                 Асоциация за мобилност и транспортни политики
               </h1>
-              <p className={styles.heroSubtitle}>
-              Независима експертна организация, работеща за разработването на устойчиви и ефективни решения в сферата на мобилността.
-              </p>
             </div>
           </div>
         </div>
@@ -118,6 +115,34 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      <section id="activities" className={`section ${styles.aboutSection}`}>
+        <div className={styles.aboutSectionBackground}></div>
+        <div className="container">
+          <div className={styles.activitiesHeader}>
+            <h2 className={styles.activitiesTitle}>Области на фокус</h2>
+          </div>
+            <div className={styles.activitiesGrid} role="list" aria-label="Списък с дейности и области на фокус">
+              {focusAreas.map(({ number, Icon, title, text }) => (
+                <div key={number} className={`${styles.activityCardInstitutional} reveal`} role="listitem">
+                  <div className={styles.activityCardHeader}>
+                    <div className={styles.activityCardNumber}>{number}</div>
+                    <Icon className={styles.iconBadge} aria-hidden="true" focusable="false" />
+                    <div className={styles.activityCardLine}></div>
+                  </div>
+                  <div className={styles.activityCardBody}>
+                    <h3 className={styles.activityCardTitle}>{title}</h3>
+                    <p className={styles.activityCardText}>{text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+        </div>
+      </section>
+
+      <div className={styles.projectTypeSubsection}>
+          
+          </div>
+
       {/* Main Project Types Section */}
       <section id="project-types" className={`section ${styles.projectTypesSection}`}>
         <div className={styles.projectTypesSectionBackground}></div>
@@ -125,7 +150,7 @@ const Home: React.FC = () => {
           <div className={styles.projectTypesHeader}>
             <h2 className={styles.projectTypesTitle}>Основни проекти и дейности</h2>
           </div>
-          
+
           {/* 2.1 Project Proposals */}
           <div className={styles.projectTypeCard}>
             <div className={styles.projectTypeCardHeader}>
@@ -150,6 +175,8 @@ const Home: React.FC = () => {
               </div>
             </div>
           </div>
+
+        
 
           {/* 2.2 Transport Scheme Analyses */}
           <div className={styles.projectTypeCard}>
@@ -245,25 +272,146 @@ const Home: React.FC = () => {
                   <img src="/Project 5.png" alt="Организация на движението" className={styles.projectTypeCardImage} />
                 </div>
               </div>
+              <div className={styles.coreActivitiesHeader}>
+          </div>
 
-              <div className={styles.projectTypeSubsection}>
-                <h4 className={styles.projectTypeSubtitle}>Области на фокус</h4>
-                <div className={styles.activitiesGrid} role="list" aria-label="Списък с дейности и области на фокус">
-                  {focusAreas.map(({ number, Icon, title, text }) => (
-                    <div key={number} className={`${styles.activityCardInstitutional} reveal`} role="listitem">
-                      <div className={styles.activityCardHeader}>
-                        <div className={styles.activityCardNumber}>{number}</div>
-                        <Icon className={styles.iconBadge} aria-hidden="true" focusable="false" />
-                        <div className={styles.activityCardLine}></div>
-                      </div>
-                      <div className={styles.activityCardBody}>
-                        <h3 className={styles.activityCardTitle}>{title}</h3>
-                        <p className={styles.activityCardText}>{text}</p>
-                      </div>
-                    </div>
-                  ))}
+          <div className={styles.coreActivitiesGrid}>
+
+            {/* 1 - Разработване на проекти */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="Разработване на проекти за организация на движението">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <Navigation className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
                 </div>
+                <h3 className={styles.coreActivityTitle}>Разработване на проекти за организация на движението</h3>
               </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Изготвяме предложения и проекти за организация на движението в отделни улици, кръстовища или цели зони на населените места. Тези проекти включват:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>режими на движение;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пътна сигнализация;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пътна маркировка;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>организация на паркирането;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>мерки за повишаване на пътната безопасност;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>подобряване на условията за пешеходци и велосипедисти.</span></li>
+                </ul>
+              </div>
+            </article>
+
+            {/* 2 - Анализ на транспортните потоци */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="Анализ на транспортните потоци">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <Gauge className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
+                </div>
+                <h3 className={styles.coreActivityTitle}>Анализ на транспортните потоци</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Извършваме преброявания и анализи на транспортните потоци, които включват:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>интензивност на автомобилния трафик;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>разпределение на транспортните потоци по направления;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пешеходни потоци;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>натоварване на кръстовища;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>анализ на конфликтни точки.</span></li>
+                </ul>
+                <p className={styles.coreActivityFootnote}>Тези данни служат като основа за разработване на ефективни решения за организация на движението.</p>
+              </div>
+            </article>
+
+            {/* 3 - Проекти за светофарни уредби */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="Проекти за светофарни уредби">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <TrafficCone className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
+                </div>
+                <h3 className={styles.coreActivityTitle}>Проекти за светофарни уредби</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Разработваме предложения за проекти на светофарни уредби, включително:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>определяне на фази на регулиране;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>времетраене на сигналите;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизиране на цикъла на светофара;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>подобряване на пропускателната способност на кръстовищата.</span></li>
+                </ul>
+                <p className={styles.coreActivityFootnote}>Решенията се базират на реални данни за транспортните потоци и анализ на натоварванията в различни часови периоди.</p>
+              </div>
+            </article>
+
+            {/* 4 - Координация на светофарни уредби */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="Координация на светофарни уредби">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <Route className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
+                </div>
+                <h3 className={styles.coreActivityTitle}>Координация на светофарни уредби</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Предлагаме разработване на координационни планове за светофарно регулирани кръстовища, които позволяват:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>синхронизация на светофарите по основни булеварди;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>създаване на „зелени вълни";</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на времето за пътуване;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>по-ефективно управление на трафика.</span></li>
+                </ul>
+              </div>
+            </article>
+
+            {/* 5 - GIS заснемане */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="GIS заснемане на знаковото стопанство">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <Map className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
+                </div>
+                <h3 className={styles.coreActivityTitle}>GIS заснемане на знаковото стопанство</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Извършваме заснемане на съществуващото знаково стопанство и организация на движението чрез GIS платформи. Това включва:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>позициониране на пътни знаци;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пътна маркировка;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>светофарни уредби;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>други елементи на организацията на движението.</span></li>
+                </ul>
+                <p className={styles.coreActivityFootnote}>Събраната информация се използва за създаване на цифрови карти и бази данни, които подпомагат управлението на транспортната инфраструктура.</p>
+              </div>
+            </article>
+
+            {/* 6 - Симулации на трафика */}
+            <article className={`${styles.coreActivityCard} reveal`} aria-label="Симулации на трафика">
+              <div className={styles.coreActivityCardHeader}>
+                <div className={styles.coreActivityIconWrap}>
+                  <Cpu className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
+                </div>
+                <h3 className={styles.coreActivityTitle}>Симулации на трафика</h3>
+              </div>
+              <div className={styles.coreActivityBody}>
+                <p className={styles.coreActivityText}>Използваме транспортни модели и софтуерни инструменти за симулиране на различни варианти на организация на движението. Чрез симулации могат да се оценят:</p>
+                <ul className={styles.coreActivityList}>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>ефектите от промени в организацията на движението;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>влиянието на нови инфраструктурни решения;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизация на работата на кръстовища;</span></li>
+                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на задръстванията.</span></li>
+                </ul>
+                <p className={styles.coreActivityFootnote}>Този подход позволява предварителна оценка на различни решения и избор на най-ефективния вариант.</p>
+              </div>
+            </article>
+
+          </div>
+
+          <div className={styles.coreActivitiesOutcome}>
+            <div className={styles.coreActivitiesOutcomeInner}>
+              <p className={styles.coreActivitiesOutcomeLabel}>С проектите и анализите за организация на движението се постигат:</p>
+              <ul className={styles.coreActivitiesOutcomeList}>
+                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>подобряване на пропускателната способност на уличната мрежа;</span></li>
+                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на задръстванията;</span></li>
+                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>повишаване на пътната безопасност;</span></li>
+                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>по-добра работа на светофарно регулираните кръстовища;</span></li>
+                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>по-ефективно управление на транспортната система.</span></li>
+              </ul>
+            </div>
+          </div>
             </div>
           </div>
 
@@ -315,79 +463,79 @@ const Home: React.FC = () => {
                   </div>
                 </div>
 
-              <div className={styles.projectTypeSubsection}>
-                <h4 className={styles.projectTypeSubtitle}>Как изглежда процесът (схема)</h4>
-                <ol className={styles.gpodTimeline} aria-label="Етапи при изработване на ГПОД">
-                  <li className={styles.gpodTimelineItem}>
-                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
-                    <div className={styles.gpodTimelineContent}>
-                      <h5 className={styles.gpodTimelineTitle}>1) Данни и обследване</h5>
-                      <p className={styles.gpodTimelineText}>Трафик, ПТП, потоци, паркиране, ОТ, пешеходна/вело среда, теренни проверки.</p>
-                    </div>
-                  </li>
-                  <li className={styles.gpodTimelineItem}>
-                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
-                    <div className={styles.gpodTimelineContent}>
-                      <h5 className={styles.gpodTimelineTitle}>2) Анализ и проблемни зони</h5>
-                      <p className={styles.gpodTimelineText}>Конфликтни точки, капацитет, скоростни режими, риск за уязвими участници.</p>
-                    </div>
-                  </li>
-                  <li className={styles.gpodTimelineItem}>
-                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
-                    <div className={styles.gpodTimelineContent}>
-                      <h5 className={styles.gpodTimelineTitle}>3) Схеми и мерки</h5>
-                      <p className={styles.gpodTimelineText}>Организация на движението, сигнализация/маркировка, ОТ приоритет, паркинг решения.</p>
-                    </div>
-                  </li>
-                  <li className={styles.gpodTimelineItem}>
-                    <div className={styles.gpodTimelineMarker} aria-hidden="true" />
-                    <div className={styles.gpodTimelineContent}>
-                      <h5 className={styles.gpodTimelineTitle}>4) План за изпълнение</h5>
-                      <p className={styles.gpodTimelineText}>Приоритизация, бюджет/етапност, индикатори, мониторинг и актуализация на мерките.</p>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-
-              <div className={styles.projectTypeSubsection}>
-                <h4 className={styles.projectTypeSubtitle}>Защо се изработва ГПОД?</h4>
-                <div className={`${styles.gpodTwoColumn} ${styles.gpodWhyTwoColumn}`}>
-                  <div className={styles.gpodWhyContent}>
-                    <p className={styles.projectTypeCardText}>ГПОД се разработва с цел:</p>
-                    <ul className={styles.projectTypeList}>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>повишаване на пътната безопасност;</span></li>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>ясно регламентиране на движението на всички участници – автомобили, пешеходци, велосипедисти, обществен транспорт;</span></li>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизиране на трафика и намаляване на конфликтните точки;</span></li>
-                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>създаване на предвидима и разбираема транспортна среда.</span></li>
-                    </ul>
-                  </div>
-
-                  <div className={styles.gpodImageWrapper}>
-                    <img
-                      src="/GPOD.png"
-                      alt="Схема: Генерален план за организация на движението (ГПОД)"
-                      className={styles.gpodImage}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
+                <div className={styles.projectTypeSubsection}>
+                  <h4 className={styles.projectTypeSubtitle}>Как изглежда процесът (схема)</h4>
+                  <ol className={styles.gpodTimeline} aria-label="Етапи при изработване на ГПОД">
+                    <li className={styles.gpodTimelineItem}>
+                      <div className={styles.gpodTimelineMarker} aria-hidden="true" />
+                      <div className={styles.gpodTimelineContent}>
+                        <h5 className={styles.gpodTimelineTitle}>1) Данни и обследване</h5>
+                        <p className={styles.gpodTimelineText}>Трафик, ПТП, потоци, паркиране, ОТ, пешеходна/вело среда, теренни проверки.</p>
+                      </div>
+                    </li>
+                    <li className={styles.gpodTimelineItem}>
+                      <div className={styles.gpodTimelineMarker} aria-hidden="true" />
+                      <div className={styles.gpodTimelineContent}>
+                        <h5 className={styles.gpodTimelineTitle}>2) Анализ и проблемни зони</h5>
+                        <p className={styles.gpodTimelineText}>Конфликтни точки, капацитет, скоростни режими, риск за уязвими участници.</p>
+                      </div>
+                    </li>
+                    <li className={styles.gpodTimelineItem}>
+                      <div className={styles.gpodTimelineMarker} aria-hidden="true" />
+                      <div className={styles.gpodTimelineContent}>
+                        <h5 className={styles.gpodTimelineTitle}>3) Схеми и мерки</h5>
+                        <p className={styles.gpodTimelineText}>Организация на движението, сигнализация/маркировка, ОТ приоритет, паркинг решения.</p>
+                      </div>
+                    </li>
+                    <li className={styles.gpodTimelineItem}>
+                      <div className={styles.gpodTimelineMarker} aria-hidden="true" />
+                      <div className={styles.gpodTimelineContent}>
+                        <h5 className={styles.gpodTimelineTitle}>4) План за изпълнение</h5>
+                        <p className={styles.gpodTimelineText}>Приоритизация, бюджет/етапност, индикатори, мониторинг и актуализация на мерките.</p>
+                      </div>
+                    </li>
+                  </ol>
                 </div>
-                <aside className={styles.gpodCalloutEmphasis} aria-label="Връзка с пътната безопасност">
-                  <h5 className={styles.gpodCalloutTitle}>Връзка с пътната безопасност</h5>
-                  <ul className={styles.projectTypeList}>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>идентифицира рискови участъци и зони с концентрация на ПТП;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>предлага мерки за ограничаване на скоростта и конфликтите;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>въвежда адекватна сигнализация, маркировка и режими на движение;</span></li>
-                    <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>осигурява по-добра защита на уязвимите участници в движението.</span></li>
-                  </ul>
-                </aside>
-              </div>
 
-              <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>
-                На практика <span className={styles.gpodTerm}>ГПОД</span> е основният инструмент, чрез който една община планира и управлява безопасността и
-                ефективността на движението в дългосрочен план.
-              </p>
-              <p className={styles.projectTypeCardHighlight}>АМТП разработва ГПОД в пълно съответствие с нормативната уредба и добрите европейски практики.</p>
+                <div className={styles.projectTypeSubsection}>
+                  <h4 className={styles.projectTypeSubtitle}>Защо се изработва ГПОД?</h4>
+                  <div className={`${styles.gpodTwoColumn} ${styles.gpodWhyTwoColumn}`}>
+                    <div className={styles.gpodWhyContent}>
+                      <p className={styles.projectTypeCardText}>ГПОД се разработва с цел:</p>
+                      <ul className={styles.projectTypeList}>
+                        <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>повишаване на пътната безопасност;</span></li>
+                        <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>ясно регламентиране на движението на всички участници – автомобили, пешеходци, велосипедисти, обществен транспорт;</span></li>
+                        <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизиране на трафика и намаляване на конфликтните точки;</span></li>
+                        <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>създаване на предвидима и разбираема транспортна среда.</span></li>
+                      </ul>
+                    </div>
+
+                    <div className={styles.gpodImageWrapper}>
+                      <img
+                        src="/GPOD.png"
+                        alt="Схема: Генерален план за организация на движението (ГПОД)"
+                        className={styles.gpodImage}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+                  <aside className={styles.gpodCalloutEmphasis} aria-label="Връзка с пътната безопасност">
+                    <h5 className={styles.gpodCalloutTitle}>Връзка с пътната безопасност</h5>
+                    <ul className={styles.projectTypeList}>
+                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>идентифицира рискови участъци и зони с концентрация на ПТП;</span></li>
+                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>предлага мерки за ограничаване на скоростта и конфликтите;</span></li>
+                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>въвежда адекватна сигнализация, маркировка и режими на движение;</span></li>
+                      <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>осигурява по-добра защита на уязвимите участници в движението.</span></li>
+                    </ul>
+                  </aside>
+                </div>
+
+                <p className={styles.projectTypeCardText} style={{ marginTop: 'var(--spacing-xl)' }}>
+                  На практика <span className={styles.gpodTerm}>ГПОД</span> е основният инструмент, чрез който една община планира и управлява безопасността и
+                  ефективността на движението в дългосрочен план.
+                </p>
+                <p className={styles.projectTypeCardHighlight}>АМТП разработва ГПОД в пълно съответствие с нормативната уредба и добрите европейски практики.</p>
               </div>
             </div>
           </div>
@@ -589,147 +737,7 @@ const Home: React.FC = () => {
       <section id="core-activities" className={`section ${styles.coreActivitiesSection}`} aria-labelledby="core-activities-heading">
         <div className={styles.coreActivitiesSectionBackground}></div>
         <div className="container">
-          <div className={styles.coreActivitiesHeader}>
-            <h2 id="core-activities-heading" className={styles.coreActivitiesTitle}>Основни дейности</h2>
-          </div>
-
-          <div className={styles.coreActivitiesGrid}>
-
-            {/* 1 - Разработване на проекти */}
-            <article className={`${styles.coreActivityCard} reveal`} aria-label="Разработване на проекти за организация на движението">
-              <div className={styles.coreActivityCardHeader}>
-                <div className={styles.coreActivityIconWrap}>
-                  <Navigation className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
-                </div>
-                <h3 className={styles.coreActivityTitle}>Разработване на проекти за организация на движението</h3>
-              </div>
-              <div className={styles.coreActivityBody}>
-                <p className={styles.coreActivityText}>Изготвяме предложения и проекти за организация на движението в отделни улици, кръстовища или цели зони на населените места. Тези проекти включват:</p>
-                <ul className={styles.coreActivityList}>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>режими на движение;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пътна сигнализация;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пътна маркировка;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>организация на паркирането;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>мерки за повишаване на пътната безопасност;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>подобряване на условията за пешеходци и велосипедисти.</span></li>
-                </ul>
-              </div>
-            </article>
-
-            {/* 2 - Анализ на транспортните потоци */}
-            <article className={`${styles.coreActivityCard} reveal`} aria-label="Анализ на транспортните потоци">
-              <div className={styles.coreActivityCardHeader}>
-                <div className={styles.coreActivityIconWrap}>
-                  <Gauge className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
-                </div>
-                <h3 className={styles.coreActivityTitle}>Анализ на транспортните потоци</h3>
-              </div>
-              <div className={styles.coreActivityBody}>
-                <p className={styles.coreActivityText}>Извършваме преброявания и анализи на транспортните потоци, които включват:</p>
-                <ul className={styles.coreActivityList}>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>интензивност на автомобилния трафик;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>разпределение на транспортните потоци по направления;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пешеходни потоци;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>натоварване на кръстовища;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>анализ на конфликтни точки.</span></li>
-                </ul>
-                <p className={styles.coreActivityFootnote}>Тези данни служат като основа за разработване на ефективни решения за организация на движението.</p>
-              </div>
-            </article>
-
-            {/* 3 - Проекти за светофарни уредби */}
-            <article className={`${styles.coreActivityCard} reveal`} aria-label="Проекти за светофарни уредби">
-              <div className={styles.coreActivityCardHeader}>
-                <div className={styles.coreActivityIconWrap}>
-                  <TrafficCone className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
-                </div>
-                <h3 className={styles.coreActivityTitle}>Проекти за светофарни уредби</h3>
-              </div>
-              <div className={styles.coreActivityBody}>
-                <p className={styles.coreActivityText}>Разработваме предложения за проекти на светофарни уредби, включително:</p>
-                <ul className={styles.coreActivityList}>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>определяне на фази на регулиране;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>времетраене на сигналите;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизиране на цикъла на светофара;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>подобряване на пропускателната способност на кръстовищата.</span></li>
-                </ul>
-                <p className={styles.coreActivityFootnote}>Решенията се базират на реални данни за транспортните потоци и анализ на натоварванията в различни часови периоди.</p>
-              </div>
-            </article>
-
-            {/* 4 - Координация на светофарни уредби */}
-            <article className={`${styles.coreActivityCard} reveal`} aria-label="Координация на светофарни уредби">
-              <div className={styles.coreActivityCardHeader}>
-                <div className={styles.coreActivityIconWrap}>
-                  <Route className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
-                </div>
-                <h3 className={styles.coreActivityTitle}>Координация на светофарни уредби</h3>
-              </div>
-              <div className={styles.coreActivityBody}>
-                <p className={styles.coreActivityText}>Предлагаме разработване на координационни планове за светофарно регулирани кръстовища, които позволяват:</p>
-                <ul className={styles.coreActivityList}>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>синхронизация на светофарите по основни булеварди;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>създаване на „зелени вълни";</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на времето за пътуване;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>по-ефективно управление на трафика.</span></li>
-                </ul>
-              </div>
-            </article>
-
-            {/* 5 - GIS заснемане */}
-            <article className={`${styles.coreActivityCard} reveal`} aria-label="GIS заснемане на знаковото стопанство">
-              <div className={styles.coreActivityCardHeader}>
-                <div className={styles.coreActivityIconWrap}>
-                  <Map className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
-                </div>
-                <h3 className={styles.coreActivityTitle}>GIS заснемане на знаковото стопанство</h3>
-              </div>
-              <div className={styles.coreActivityBody}>
-                <p className={styles.coreActivityText}>Извършваме заснемане на съществуващото знаково стопанство и организация на движението чрез GIS платформи. Това включва:</p>
-                <ul className={styles.coreActivityList}>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>позициониране на пътни знаци;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>пътна маркировка;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>светофарни уредби;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>други елементи на организацията на движението.</span></li>
-                </ul>
-                <p className={styles.coreActivityFootnote}>Събраната информация се използва за създаване на цифрови карти и бази данни, които подпомагат управлението на транспортната инфраструктура.</p>
-              </div>
-            </article>
-
-            {/* 6 - Симулации на трафика */}
-            <article className={`${styles.coreActivityCard} reveal`} aria-label="Симулации на трафика">
-              <div className={styles.coreActivityCardHeader}>
-                <div className={styles.coreActivityIconWrap}>
-                  <Cpu className={styles.coreActivityIcon} aria-hidden="true" focusable="false" />
-                </div>
-                <h3 className={styles.coreActivityTitle}>Симулации на трафика</h3>
-              </div>
-              <div className={styles.coreActivityBody}>
-                <p className={styles.coreActivityText}>Използваме транспортни модели и софтуерни инструменти за симулиране на различни варианти на организация на движението. Чрез симулации могат да се оценят:</p>
-                <ul className={styles.coreActivityList}>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>ефектите от промени в организацията на движението;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>влиянието на нови инфраструктурни решения;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>оптимизация на работата на кръстовища;</span></li>
-                  <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на задръстванията.</span></li>
-                </ul>
-                <p className={styles.coreActivityFootnote}>Този подход позволява предварителна оценка на различни решения и избор на най-ефективния вариант.</p>
-              </div>
-            </article>
-
-          </div>
-
-          <div className={styles.coreActivitiesOutcome}>
-            <div className={styles.coreActivitiesOutcomeInner}>
-              <p className={styles.coreActivitiesOutcomeLabel}>С проектите и анализите за организация на движението се постигат:</p>
-              <ul className={styles.coreActivitiesOutcomeList}>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>подобряване на пропускателната способност на уличната мрежа;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>намаляване на задръстванията;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>повишаване на пътната безопасност;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>по-добра работа на светофарно регулираните кръстовища;</span></li>
-                <li><Check className={styles.iconBullet} aria-hidden="true" focusable="false" /><span>по-ефективно управление на транспортната система.</span></li>
-              </ul>
-            </div>
-          </div>
+          
 
         </div>
       </section>
@@ -741,7 +749,7 @@ const Home: React.FC = () => {
           <div className={styles.completedProjectsHeader}>
             <h2 className={styles.completedProjectsTitle}>Реализирани и текущи проекти</h2>
           </div>
-          
+
           <div className={styles.completedProjectsLayout}>
             <div className={styles.completedProjectsCard}>
               <div className={styles.completedProjectsCardHeader}>

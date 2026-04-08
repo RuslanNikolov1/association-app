@@ -1,6 +1,6 @@
 
 .hero {
-  background: url('/Hero.png') center/cover no-repeat;
+  background: url('/Hero.png') center no-repeat;
   color: var(--white);
   padding: var(--spacing-2xl) 0;
   position: relative;
@@ -15,9 +15,9 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.3) 35%,
-    rgba(0, 0, 0, 0.15) 65%,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 35%,
+    rgba(0, 0, 0, 0.2) 65%,
     rgba(0, 0, 0, 0.02) 100%
   );
   z-index: 0;
@@ -31,8 +31,8 @@
   width: 100%;
   z-index: 1;
   text-align: center;
-  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--spacing-2xl);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,26 +69,19 @@
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 800;
   margin-top: 8vh;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: 0;
   line-height: 1.05;
   color: var(--white);
   letter-spacing: -0.03em;
   text-rendering: optimizeLegibility;
   font-feature-settings: 'kern' 1, 'liga' 1;
+  text-align: left;
 }
 
-.heroSubtitle {
-  font-family: var(--font-primary);
-  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-  line-height: 1.7;
-  margin-bottom: var(--spacing-3xl);
-  opacity: 0.98;
-  font-weight: 700;
-  color: var(--white);
-  text-rendering: optimizeLegibility;
-  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
-  margin-left: auto;
-  margin-right: auto;
+@media (min-width: 768px) {
+  .heroTitle {
+    width: 70vw;
+  }
 }
 
 .heroActions {
@@ -175,22 +168,14 @@
     font-size: clamp(2rem, 8vw, 3.5rem);
     margin-bottom: var(--spacing-sm);
     margin-top: 2vh;
+    text-align: center;
   }
   
-  .heroSubtitle {
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    margin-bottom: var(--spacing-2xl);
-    padding: 1vh;
-  }
 }
 
 @media (max-width: 480px) {
   .heroTitle {
     font-size: var(--text-3xl);
-  }
-  
-  .heroSubtitle {
-    font-size: var(--text-base);
   }
   
   .heroActions {
@@ -2553,10 +2538,6 @@
     font-size: var(--text-xl);
   }
 
-  .heroSubtitle {
-    font-size: var(--text-sm);
-  }
-
   .sectionTitle {
     font-size: clamp(1.75rem, 6vw, 2.5rem);
     margin-bottom: var(--spacing-2xl);
@@ -2830,10 +2811,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  .heroSubtitle {
-    font-size: var(--text-base);
   }
 
   .heroActions {

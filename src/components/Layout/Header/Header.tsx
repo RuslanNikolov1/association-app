@@ -72,15 +72,6 @@ const Header: React.FC = () => {
               </li>
               <li className={styles.navItem}>
                 <a
-                  href="#project-types"
-                  className={styles.navLink}
-                  onClick={closeMenu}
-                >
-                  Основни проекти
-                </a>
-              </li>
-              <li className={styles.navItem}>
-                <a
                   href="#activities"
                   className={styles.navLink}
                   onClick={closeMenu}
@@ -90,20 +81,20 @@ const Header: React.FC = () => {
               </li>
               <li className={styles.navItem}>
                 <a
+                  href="#project-types"
+                  className={styles.navLink}
+                  onClick={closeMenu}
+                >
+                  Основни проекти
+                </a>
+              </li>
+              <li className={styles.navItem}>
+                <a
                   href="#team"
                   className={styles.navLink}
                   onClick={closeMenu}
                 >
                   Екип
-                </a>
-              </li>
-              <li className={styles.navItem}>
-                <a
-                  href="#core-activities"
-                  className={styles.navLink}
-                  onClick={closeMenu}
-                >
-                  Основни дейности
                 </a>
               </li>
               <li className={styles.navItem}>
